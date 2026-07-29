@@ -10,3 +10,16 @@ menubtn.addEventListener("click", () => {
 closebtn.addEventListener("click", () => {
     navlinks.classList.remove("active")
 })
+
+//header
+
+let header=document.querySelector(".header")
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>200){
+    header.classList.add("active")
+    }
+
+    else{
+        header.classList.remove("active")
+    }
+})

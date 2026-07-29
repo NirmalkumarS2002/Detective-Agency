@@ -20,14 +20,27 @@ body {
     flex-direction: column;
     padding-inline: 20px;
     background: green;
+    position: absolute;
+    width: 100%;
+    transition: .6s ease;
+    z-index: 1;
+}
+
+.header.active {
+    position: fixed;
+
+}
+
+.header.active .head1 {
+    display: none;
+    transition: .6s ease;
 }
 
 .head1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-bottom: 1px solid white;
-
-
+    transition: .6s ease;
 }
 
 
@@ -130,6 +143,7 @@ body {
     grid-template-columns: 3fr 1fr;
     align-items: center;
     padding-block: 10px;
+    transition: .6s ease;
 }
 
 .nav-links {
@@ -362,6 +376,16 @@ body {
     gap: 15px;
 }
 
+.f-con-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.f-con-links a span {
+    font-size: 18px;
+}
+
 .footer-links a {
     text-decoration: none;
     font-size: 16px;
@@ -409,7 +433,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    .footer3{
+    .footer3 {
         flex-direction: column;
         align-items: center;
         gap: 15px;
@@ -421,11 +445,11 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .footer-main1{
+    .footer-main1 {
         align-items: center;
     }
 
-    .footer-links{
-      align-items: center;
+    .footer-links {
+        align-items: center;
     }
 }
