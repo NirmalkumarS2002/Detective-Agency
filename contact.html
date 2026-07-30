@@ -61,7 +61,7 @@
        1 — PAGE BANNER
     =================================================== */
     .ct-banner {
-        min-height: 55vh;
+        min-height: 65vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,10 +70,11 @@
             url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1800&auto=format&fit=crop");
         background-size: cover;
         background-position: center;
-        padding-top: 100px;
+        padding-top: 220px;
+        padding-bottom: 60px;
     }
 
-    .ct-banner-content span {
+    .ct-banner-content>span {
         color: var(--pcolor);
         font-size: 15px;
         letter-spacing: 4px;
@@ -84,7 +85,7 @@
 
     .ct-banner-content h1 {
         font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(50px, 8vw, 100px);
+        font-size: clamp(50px, 8vw, 80px);
         text-transform: uppercase;
         color: white;
         font-weight: 400;
@@ -113,6 +114,12 @@
     .ct-crumb span.material-symbols-outlined {
         font-size: 18px;
         color: var(--pcolor);
+    }
+
+    @media (max-width:750px) {
+         .ct-banner{
+            padding-top: 120px;
+         }
     }
 
     /* ===================================================
@@ -522,11 +529,11 @@
                     <span class="material-symbols-outlined close-btn">close</span></a>
                 </div>
 
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="service.html">Services</a>
                 <a href="blog.html">Blogs</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.html" class="active">Contact Us</a>
             </div>
 
             <div class="nav-sotial-icons">

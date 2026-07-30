@@ -1,495 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decetive-About-Page</title>
     <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 
-<style>
-    /* ============ shared ============ */
-    .ab-title-wrap {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 60px auto;
-    }
+    <style>
+        /* ============ shared ============ */
+        .ab-title-wrap {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
 
-    .ab-eyebrow {
-        color: var(--pcolor);
-        font-size: 15px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        display: block;
-    }
+        .ab-eyebrow {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
 
-    .ab-title {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(32px, 4vw, 52px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
+        .ab-title {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(32px, 4vw, 52px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
 
-    .ab-desc {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.6;
-    }
+        .ab-desc {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-    .ab-container {
-        max-width: 1400px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 100px 20px;
-    }
+        .ab-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
 
-    /* ===================================================
+        /* ===================================================
        1 — PAGE BANNER
     =================================================== */
-    .ab-banner {
-        min-height: 55vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: linear-gradient(125deg, rgba(0,0,0,0.6), rgba(0,0,0,0.75)),
-            url("https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1800&auto=format&fit=crop");
-        background-size: cover;
-        background-position: center;
-        padding-top: 100px;
+        .ab-banner {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+                url("https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1800&auto=format&fit=crop");
+            background-size: cover;
+            background-position: center;
+            padding-top: 220px;
+            padding-bottom: 60px;
+        }
+
+        .ab-banner-content>span {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .ab-banner-content h1 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(50px, 8vw, 80px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .ab-crumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+
+        .ab-crumb a {
+            color: white;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .ab-crumb a:hover {
+            color: var(--pcolor);
+        }
+
+        .ab-crumb span.material-symbols-outlined {
+            font-size: 18px;
+            color: var(--pcolor);
+        }
+
+        
+    @media (max-width:750px) {
+         .ab-banner{
+            padding-top: 120px;
+         }
     }
 
-    .ab-banner-content span {
-        color: var(--pcolor);
-        font-size: 15px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 15px;
-    }
-
-    .ab-banner-content h1 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(50px, 8vw, 100px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        margin-bottom: 20px;
-    }
-
-    .ab-crumb {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 16px;
-    }
-
-    .ab-crumb a {
-        color: white;
-        text-decoration: none;
-        transition: .3s ease;
-    }
-
-    .ab-crumb a:hover {
-        color: var(--pcolor);
-    }
-
-    .ab-crumb span.material-symbols-outlined {
-        font-size: 18px;
-        color: var(--pcolor);
-    }
-
-    /* ===================================================
+        /* ===================================================
        2 — OUR STORY
     =================================================== */
-    .ab-story-section {
-        background: var(--dark);
-    }
+        .ab-story-section {
+            background: var(--dark);
+        }
 
-    .ab-story-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px;
-    }
-
-    .ab-story-img-wrap {
-        position: relative;
-        height: 500px;
-    }
-
-    .ab-story-img-main {
-        width: 80%;
-        height: 85%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 6px solid var(--dark);
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
-    }
-
-    .ab-story-img-sub {
-        width: 55%;
-        height: 55%;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border: 6px solid var(--dark);
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .ab-story-badge {
-        position: absolute;
-        top: 20px;
-        right: 10%;
-        background: var(--pcolor);
-        color: white;
-        padding: 20px;
-        width: 130px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.3;
-        text-transform: uppercase;
-    }
-
-    .ab-story-badge strong {
-        display: block;
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 34px;
-    }
-
-    .ab-story-content h2 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(30px, 4vw, 46px);
-        color: white;
-        text-transform: uppercase;
-        font-weight: 400;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .ab-story-content p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
-
-    .ab-signature {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 26px;
-        color: white;
-        margin-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding-top: 20px;
-    }
-
-    .ab-signature span {
-        display: block;
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.5);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 6px;
-    }
-
-    @media (max-width:900px) {
         .ab-story-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 20px;
         }
 
         .ab-story-img-wrap {
-            height: 420px;
+            position: relative;
+            height: 500px;
         }
-    }
 
-    /* ===================================================
+        .ab-story-img-main {
+            width: 80%;
+            height: 85%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+
+        .ab-story-img-sub {
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .ab-story-badge {
+            position: absolute;
+            top: 20px;
+            right: 10%;
+            background: var(--pcolor);
+            color: white;
+            padding: 20px;
+            width: 130px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .ab-story-badge strong {
+            display: block;
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 34px;
+        }
+
+        .ab-story-content h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            color: white;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .ab-story-content p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .ab-signature {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 26px;
+            color: white;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 20px;
+        }
+
+        .ab-signature span {
+            display: block;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+        }
+
+        @media (max-width:900px) {
+            .ab-story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ab-story-img-wrap {
+                height: 420px;
+            }
+        }
+
+        /* ===================================================
        3 — MISSION / VISION / VALUES
     =================================================== */
-    .ab-mvv-section {
-        background: #0c0c0c;
-    }
-
-    .ab-mvv-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .ab-mvv-card {
-        background: #141414;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 45px 35px;
-        transition: .5s ease;
-    }
-
-    .ab-mvv-card:hover {
-        background: var(--pcolor);
-        transform: translateY(-8px);
-    }
-
-    .ab-mvv-card span.material-symbols-outlined {
-        font-size: 42px;
-        color: var(--pcolor);
-        margin-bottom: 25px;
-        display: block;
-        transition: .5s ease;
-    }
-
-    .ab-mvv-card:hover span.material-symbols-outlined {
-        color: white;
-    }
-
-    .ab-mvv-card h3 {
-        font-size: 22px;
-        text-transform: uppercase;
-        color: white;
-        margin-bottom: 14px;
-        font-weight: 500;
-    }
-
-    .ab-mvv-card p {
-        font-size: 15px;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.6);
-        transition: .5s ease;
-    }
-
-    .ab-mvv-card:hover p {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    @media (max-width:900px) {
-        .ab-mvv-grid {
-            grid-template-columns: 1fr;
+        .ab-mvv-section {
+            background: #0c0c0c;
         }
-    }
 
-    /* ===================================================
+        .ab-mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
+        .ab-mvv-card {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 45px 35px;
+            transition: .5s ease;
+        }
+
+        .ab-mvv-card:hover {
+            background: var(--pcolor);
+            transform: translateY(-8px);
+        }
+
+        .ab-mvv-card span.material-symbols-outlined {
+            font-size: 42px;
+            color: var(--pcolor);
+            margin-bottom: 25px;
+            display: block;
+            transition: .5s ease;
+        }
+
+        .ab-mvv-card:hover span.material-symbols-outlined {
+            color: white;
+        }
+
+        .ab-mvv-card h3 {
+            font-size: 22px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .ab-mvv-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.6);
+            transition: .5s ease;
+        }
+
+        .ab-mvv-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width:900px) {
+            .ab-mvv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        4 — MILESTONES / JOURNEY
     =================================================== */
-    .ab-journey-section {
-        background: linear-gradient(125deg, rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-            url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1800&auto=format&fit=crop");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .ab-journey-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .ab-journey-card {
-        border-left: 3px solid var(--pcolor);
-        padding-left: 22px;
-    }
-
-    .ab-journey-card strong {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 40px;
-        color: white;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .ab-journey-card h4 {
-        color: var(--pcolor);
-        text-transform: uppercase;
-        font-size: 15px;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-    }
-
-    .ab-journey-card p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    @media (max-width:1000px) {
-        .ab-journey-grid {
-            grid-template-columns: 1fr 1fr;
+        .ab-journey-section {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+                url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1800&auto=format&fit=crop");
+            background-size: cover;
+            background-position: center;
         }
-    }
 
-    @media (max-width:550px) {
         .ab-journey-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .ab-journey-card {
+            border-left: 3px solid var(--pcolor);
+            padding-left: 22px;
+        }
+
+        .ab-journey-card strong {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 40px;
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ab-journey-card h4 {
+            color: var(--pcolor);
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .ab-journey-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width:1000px) {
+            .ab-journey-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:550px) {
+            .ab-journey-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        5 — MEET THE TEAM
     =================================================== */
-    .ab-team-section {
-        background: var(--dark);
-    }
-
-    .ab-team-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .ab-team-card {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .ab-team-img {
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-        filter: grayscale(60%);
-        transition: .5s ease;
-    }
-
-    .ab-team-card:hover .ab-team-img {
-        filter: grayscale(0%);
-        transform: scale(1.05);
-    }
-
-    .ab-team-info {
-        background: #141414;
-        padding: 20px;
-        text-align: center;
-        border-bottom: 3px solid var(--pcolor);
-    }
-
-    .ab-team-info h3 {
-        color: white;
-        font-size: 18px;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-    }
-
-    .ab-team-info p {
-        color: var(--pcolor);
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    @media (max-width:1000px) {
-        .ab-team-grid {
-            grid-template-columns: 1fr 1fr;
+        .ab-team-section {
+            background: var(--dark);
         }
-    }
 
-    @media (max-width:550px) {
         .ab-team-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .ab-team-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ab-team-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            filter: grayscale(60%);
+            transition: .5s ease;
+        }
+
+        .ab-team-card:hover .ab-team-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .ab-team-info {
+            background: #141414;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--pcolor);
+        }
+
+        .ab-team-info h3 {
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .ab-team-info p {
+            color: var(--pcolor);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width:1000px) {
+            .ab-team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:550px) {
+            .ab-team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        6 — CTA
     =================================================== */
-    .ab-cta-section {
-        background: var(--pcolor);
-    }
+        .ab-cta-section {
+            background: var(--pcolor);
+        }
 
-    .ab-cta-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 30px;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 80px 20px;
-    }
-
-    .ab-cta-grid h2 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(28px, 4vw, 44px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        line-height: 1.25;
-        margin-bottom: 12px;
-    }
-
-    .ab-cta-grid p {
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 16px;
-    }
-
-    .ab-cta-btn-wrap {
-        display: flex;
-        justify-content: flex-end;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .ab-cta-btn {
-        padding: 16px 40px;
-        background: var(--dark);
-        color: white;
-        border: none;
-        font-size: 15px;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: .5s ease;
-        text-decoration: none;
-    }
-
-    .ab-cta-btn:hover {
-        background: white;
-        color: var(--pcolor);
-    }
-
-    @media (max-width:800px) {
         .ab-cta-grid {
-            grid-template-columns: 1fr;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .ab-cta-grid h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(28px, 4vw, 44px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .ab-cta-grid p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
         }
 
         .ab-cta-btn-wrap {
-            justify-content: center;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-    }
-</style>
+
+        .ab-cta-btn {
+            padding: 16px 40px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            font-size: 15px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .5s ease;
+            text-decoration: none;
+        }
+
+        .ab-cta-btn:hover {
+            background: white;
+            color: var(--pcolor);
+        }
+
+        @media (max-width:800px) {
+            .ab-cta-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .ab-cta-btn-wrap {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 
 <body>
- <header class="header">
+    <header class="header">
 
         <div class="head1">
             <div class="logo-container">
@@ -545,8 +554,8 @@
                     <span class="material-symbols-outlined close-btn">close</span></a>
                 </div>
 
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About Us</a>
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
                 <a href="service.html">Services</a>
                 <a href="blog.html">Blogs</a>
                 <a href="contact.html">Contact Us</a>
@@ -573,187 +582,187 @@
     </header>
 
 
-<!-- ============ 1: PAGE BANNER ============ -->
-<section class="ab-banner">
-    <div class="ab-banner-content">
-        <span>Know Our Agency</span>
-        <h1>About Us</h1>
-        <div class="ab-crumb">
-            <a href="index.html">Home</a>
-            <span class="material-symbols-outlined">chevron_right</span>
-            <span>About Us</span>
-        </div>
-    </div>
-</section>
-
-<!-- ============ 2: OUR STORY ============ -->
-<section class="ab-story-section">
-    <div class="ab-story-grid">
-        <div class="ab-story-img-wrap">
-            <img class="ab-story-img-main"
-                src="https://images.unsplash.com/photo-1587613864411-1e4ebe0f2c02?q=80&w=1000&auto=format&fit=crop"
-                alt="Detective agency founder reviewing files">
-            <img class="ab-story-img-sub"
-                src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184?q=80&w=800&auto=format&fit=crop"
-                alt="Investigator examining evidence board">
-            <div class="ab-story-badge"><strong>18+</strong>Years of Experience</div>
-        </div>
-
-        <div class="ab-story-content">
-            <span class="ab-eyebrow">Our Story</span>
-            <h2>Built On Trust, Driven By Truth</h2>
-            <p>Vestigae Detective Agency was founded on a simple belief — that every client deserves clear,
-                verifiable answers, delivered with total discretion. What began as a small team of
-                ex-law-enforcement officers has grown into a full-service investigation agency trusted by
-                individuals and businesses alike.</p>
-            <p>Today, we combine field expertise with modern digital forensics to solve cases that others
-                consider closed.</p>
-
-            <div class="ab-signature">Arjun Menon
-                <span>Founder & Lead Investigator</span>
+    <!-- ============ 1: PAGE BANNER ============ -->
+    <section class="ab-banner">
+        <div class="ab-banner-content">
+            <span>Know Our Agency</span>
+            <h1>About Us</h1>
+            <div class="ab-crumb">
+                <a href="index.html">Home</a>
+                <span class="material-symbols-outlined">chevron_right</span>
+                <span>About Us</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ 3: MISSION / VISION / VALUES ============ -->
-<section class="ab-mvv-section">
-    <div class="ab-container" style="padding-bottom:0;">
-        <div class="ab-title-wrap">
-            <span class="ab-eyebrow">What Drives Us</span>
-            <h2 class="ab-title">Mission, Vision & Values</h2>
-            <p class="ab-desc">The principles that guide every investigation we take on.</p>
+    <!-- ============ 2: OUR STORY ============ -->
+    <section class="ab-story-section">
+        <div class="ab-story-grid">
+            <div class="ab-story-img-wrap">
+                <img class="ab-story-img-main"
+                    src="https://images.unsplash.com/photo-1587613864411-1e4ebe0f2c02?q=80&w=1000&auto=format&fit=crop"
+                    alt="Detective agency founder reviewing files">
+                <img class="ab-story-img-sub"
+                    src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184?q=80&w=800&auto=format&fit=crop"
+                    alt="Investigator examining evidence board">
+                <div class="ab-story-badge"><strong>18+</strong>Years of Experience</div>
+            </div>
+
+            <div class="ab-story-content">
+                <span class="ab-eyebrow">Our Story</span>
+                <h2>Built On Trust, Driven By Truth</h2>
+                <p>Vestigae Detective Agency was founded on a simple belief — that every client deserves clear,
+                    verifiable answers, delivered with total discretion. What began as a small team of
+                    ex-law-enforcement officers has grown into a full-service investigation agency trusted by
+                    individuals and businesses alike.</p>
+                <p>Today, we combine field expertise with modern digital forensics to solve cases that others
+                    consider closed.</p>
+
+                <div class="ab-signature">Arjun Menon
+                    <span>Founder & Lead Investigator</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="ab-mvv-grid">
-        <div class="ab-mvv-card">
-            <span class="material-symbols-outlined">flag</span>
-            <h3>Our Mission</h3>
-            <p>To deliver accurate, court-admissible evidence that helps clients make informed decisions with
-                confidence.</p>
-        </div>
-
-        <div class="ab-mvv-card">
-            <span class="material-symbols-outlined">visibility</span>
-            <h3>Our Vision</h3>
-            <p>To be the most trusted private investigation agency, known for integrity, precision, and
-                results.</p>
-        </div>
-
-        <div class="ab-mvv-card">
-            <span class="material-symbols-outlined">verified_user</span>
-            <h3>Our Values</h3>
-            <p>Confidentiality, honesty, and relentless attention to detail in every case we undertake.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============ 4: OUR JOURNEY / MILESTONES ============ -->
-<section class="ab-journey-section">
-    <div class="ab-container" style="padding-bottom:0;">
-        <div class="ab-title-wrap">
-            <span class="ab-eyebrow">Milestones</span>
-            <h2 class="ab-title">Our Journey So Far</h2>
-            <p class="ab-desc">Key moments that shaped the agency into what it is today.</p>
-        </div>
-    </div>
-
-    <div class="ab-journey-grid">
-        <div class="ab-journey-card">
-            <strong>2008</strong>
-            <h4>Agency Founded</h4>
-            <p>Started as a two-member team handling local background checks.</p>
-        </div>
-
-        <div class="ab-journey-card">
-            <strong>2014</strong>
-            <h4>Corporate Division Launched</h4>
-            <p>Expanded into corporate fraud and due-diligence investigations.</p>
-        </div>
-
-        <div class="ab-journey-card">
-            <strong>2019</strong>
-            <h4>Cyber Forensics Added</h4>
-            <p>Built a dedicated digital investigation and cyber forensics unit.</p>
-        </div>
-
-        <div class="ab-journey-card">
-            <strong>2026</strong>
-            <h4>1,200+ Cases Closed</h4>
-            <p>Now a full-service agency serving clients across the region.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============ 5: MEET THE TEAM ============ -->
-<section class="ab-team-section">
-    <div class="ab-container" style="padding-bottom:0;">
-        <div class="ab-title-wrap">
-            <span class="ab-eyebrow">Our Experts</span>
-            <h2 class="ab-title">Meet The Team</h2>
-            <p class="ab-desc">Licensed professionals with backgrounds in law enforcement, law, and digital
-                forensics.</p>
-        </div>
-    </div>
-
-    <div class="ab-team-grid">
-        <div class="ab-team-card">
-            <img class="ab-team-img"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop"
-                alt="Lead detective portrait">
-            <div class="ab-team-info">
-                <h3>Arjun Menon</h3>
-                <p>Lead Investigator</p>
+    <!-- ============ 3: MISSION / VISION / VALUES ============ -->
+    <section class="ab-mvv-section">
+        <div class="ab-container" style="padding-bottom:0;">
+            <div class="ab-title-wrap">
+                <span class="ab-eyebrow">What Drives Us</span>
+                <h2 class="ab-title">Mission, Vision & Values</h2>
+                <p class="ab-desc">The principles that guide every investigation we take on.</p>
             </div>
         </div>
 
-        <div class="ab-team-card">
-            <img class="ab-team-img"
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop"
-                alt="Senior investigator portrait">
-            <div class="ab-team-info">
-                <h3>Divya Krishnan</h3>
-                <p>Corporate Investigations</p>
+        <div class="ab-mvv-grid">
+            <div class="ab-mvv-card">
+                <span class="material-symbols-outlined">flag</span>
+                <h3>Our Mission</h3>
+                <p>To deliver accurate, court-admissible evidence that helps clients make informed decisions with
+                    confidence.</p>
+            </div>
+
+            <div class="ab-mvv-card">
+                <span class="material-symbols-outlined">visibility</span>
+                <h3>Our Vision</h3>
+                <p>To be the most trusted private investigation agency, known for integrity, precision, and
+                    results.</p>
+            </div>
+
+            <div class="ab-mvv-card">
+                <span class="material-symbols-outlined">verified_user</span>
+                <h3>Our Values</h3>
+                <p>Confidentiality, honesty, and relentless attention to detail in every case we undertake.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4: OUR JOURNEY / MILESTONES ============ -->
+    <section class="ab-journey-section">
+        <div class="ab-container" style="padding-bottom:0;">
+            <div class="ab-title-wrap">
+                <span class="ab-eyebrow">Milestones</span>
+                <h2 class="ab-title">Our Journey So Far</h2>
+                <p class="ab-desc">Key moments that shaped the agency into what it is today.</p>
             </div>
         </div>
 
-        <div class="ab-team-card">
-            <img class="ab-team-img"
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
-                alt="Cyber investigator portrait">
-            <div class="ab-team-info">
-                <h3>Karthik Raja</h3>
-                <p>Cyber Forensics</p>
+        <div class="ab-journey-grid">
+            <div class="ab-journey-card">
+                <strong>2008</strong>
+                <h4>Agency Founded</h4>
+                <p>Started as a two-member team handling local background checks.</p>
+            </div>
+
+            <div class="ab-journey-card">
+                <strong>2014</strong>
+                <h4>Corporate Division Launched</h4>
+                <p>Expanded into corporate fraud and due-diligence investigations.</p>
+            </div>
+
+            <div class="ab-journey-card">
+                <strong>2019</strong>
+                <h4>Cyber Forensics Added</h4>
+                <p>Built a dedicated digital investigation and cyber forensics unit.</p>
+            </div>
+
+            <div class="ab-journey-card">
+                <strong>2026</strong>
+                <h4>1,200+ Cases Closed</h4>
+                <p>Now a full-service agency serving clients across the region.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 5: MEET THE TEAM ============ -->
+    <section class="ab-team-section">
+        <div class="ab-container" style="padding-bottom:0;">
+            <div class="ab-title-wrap">
+                <span class="ab-eyebrow">Our Experts</span>
+                <h2 class="ab-title">Meet The Team</h2>
+                <p class="ab-desc">Licensed professionals with backgrounds in law enforcement, law, and digital
+                    forensics.</p>
             </div>
         </div>
 
-        <div class="ab-team-card">
-            <img class="ab-team-img"
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop"
-                alt="Field agent portrait">
-            <div class="ab-team-info">
-                <h3>Priya Suresh</h3>
-                <p>Field Surveillance</p>
+        <div class="ab-team-grid">
+            <div class="ab-team-card">
+                <img class="ab-team-img"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop"
+                    alt="Lead detective portrait">
+                <div class="ab-team-info">
+                    <h3>Arjun Menon</h3>
+                    <p>Lead Investigator</p>
+                </div>
+            </div>
+
+            <div class="ab-team-card">
+                <img class="ab-team-img"
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop"
+                    alt="Senior investigator portrait">
+                <div class="ab-team-info">
+                    <h3>Divya Krishnan</h3>
+                    <p>Corporate Investigations</p>
+                </div>
+            </div>
+
+            <div class="ab-team-card">
+                <img class="ab-team-img"
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
+                    alt="Cyber investigator portrait">
+                <div class="ab-team-info">
+                    <h3>Karthik Raja</h3>
+                    <p>Cyber Forensics</p>
+                </div>
+            </div>
+
+            <div class="ab-team-card">
+                <img class="ab-team-img"
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop"
+                    alt="Field agent portrait">
+                <div class="ab-team-info">
+                    <h3>Priya Suresh</h3>
+                    <p>Field Surveillance</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ 6: CTA ============ -->
-<section class="ab-cta-section">
-    <div class="ab-cta-grid">
-        <div>
-            <h2>Have a Case That Needs Answers?</h2>
-            <p>Book a confidential consultation with our investigators today.</p>
-        </div>
+    <!-- ============ 6: CTA ============ -->
+    <section class="ab-cta-section">
+        <div class="ab-cta-grid">
+            <div>
+                <h2>Have a Case That Needs Answers?</h2>
+                <p>Book a confidential consultation with our investigators today.</p>
+            </div>
 
-        <div class="ab-cta-btn-wrap">
-            <a href="contact.html" class="ab-cta-btn">Contact Us <span
-                    class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+            <div class="ab-cta-btn-wrap">
+                <a href="contact.html" class="ab-cta-btn">Contact Us <span
+                        class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="footer">
 
