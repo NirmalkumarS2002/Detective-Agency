@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dfdf</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+    /*hero-section*/
+
+       .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.349)), url("./src/hero-bg.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .h-section-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 220px 15px 160px 15px;
+        }
+
+        .h-sub-title {
+            font-size: 80px;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: white;
+        }
+
+        .h-title {
+            font-size: 130px;
+            text-transform: uppercase;
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 16px;
+
+        }
+
+        .h-find-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .h-cases {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-self: flex-end;
+        }
+
+        .h-case-icon {
+            display: flex;
+            align-items: flex-end;
+            white-space: nowrap;
+        }
+
+        .h-case-icon span {
+            font-size: 20px;
+            height: 30px;
+            width: 30px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.212);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.39);
+
+        }
+
+        .h-case-icon span:hover {
+            color: var(--pcolor);
+            box-shadow: 0px 0px 20px var(--pcolor);
+            transform: scale(1.2);
+        }
+
+        .h-case-icon p {
+            font-size: 16px;
+            display: none;
+            color: wheat;
+        }
+
+        .h-cases2 {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-end;
+
+        }
+
+        .h-cases2 h3 {
+            font-size: 30px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 300;
+        }
+
+        .h-cases2 div {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .h-cases2 div p {
+            color: white;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .her-btns {
+            padding: 15px 50px;
+            font-size: 15px;
+            background: var(--pcolor);
+            color: white;
+            border: none;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .5s ease;
+        }
+
+        .her-btns:hover {
+            box-shadow: 0px 0px 20px #ff55337c;
+        }
+
+        .her-btns:hover span {
+            transform: translateX(5px);
+
+        }
+
+        .her-btns span {
+            font-size: 20px;
+            transition: .5s ease;
+        }
+
+        /*h-section-right*/
+
+        .h-section-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .h-section-right p {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            gap: 10px;
+            border: 1px solid gray;
+            background: rgba(255, 255, 255, 0.151);
+            padding: 7px 20px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .h-section-right p span {
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+        .h-vestigae-continer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .h-vestigae1 {
+            height: 170px;
+            width: 150px;
+            background: url("./src/h1.webp") center/cover no-repeat;
+            position: relative;
+        }
+
+        .h-vestigae2 {
+            height: 170px;
+            width: 150px;
+            background: url("./src/h2.webp") center/cover no-repeat;
+            position: relative;
+        }
+
+        .h-vestigae1::before,
+        .h-vestigae2::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            inset: 0;
+            background: url("./src/h-border.png") center/cover no-repeat;
+        }
+
+        @media (max-width:1000px) {
+            .h-sub-title {
+                font-size: 50px;
+                margin-bottom: 10px;
+            }
+
+            .h-title {
+                font-size: 90px;
+                margin-bottom: 15px;
+            }
+
+            .h-case-icon span {
+                font-size: 18px;
+            }
+
+            .h-case-icon p {
+                font-size: 14px;
+            }
+
+            .h-cases2 h3 {
+                font-size: 24px;
+            }
+
+            .h-cases2 div {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .h-cases2 div button {
+                padding: 10px 30px;
+                font-size: 14px;
+                order: 2;
+            }
+
+            .h-cases2 div p {
+                font-size: 14px;
+                order: 1;
+            }
+
+            .h-section-right p {
+                font-size: 14px;
+            }
+
+            .h-section-right p span {
+                font-size: 18px;
+            }
+
+            .h-vestigae1 {
+                height: 140px;
+                width: 120px;
+            }
+
+            .h-vestigae2 {
+                height: 140px;
+                width: 120px;
+            }
+
+        }
+
+        @media (max-width:750px) {
+
+             .h-section-content{
+                padding-top: 150px;
+             }
+
+            .h-sub-title {
+                font-size: 40px;
+            }
+
+            .h-title {
+                font-size: 60px;
+            }
+
+            .h-cases2 h3 {
+                font-size: 22px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+
+            .h-section-content {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .h-vestigae-continer {
+                flex-direction: row;
+            }
+
+            .h-find-container {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .h-cases {
+                flex-direction: row;
+                align-self: center;
+            }
+
+            .h-cases2 {
+                align-self: center;
+                align-items: center;
+                text-align: center;
+            }
+
+
+            .h-cases2 div p {
+                margin-bottom: 20px;
+            }
+
+            .h-cases2 div button {
+                align-self: center;
+            }
+
+        }
+
+        @media (max-width:450px) {
+
+            .h-sub-title {
+                font-size: 28px;
+            }
+
+            .h-title {
+                font-size: 48px;
+            }
+
+            .h-cases2 h3 {
+                font-size: 20px;
+            }
+        }
+    /* ============ shared section styles ============ */
+    .sec-title-wrap {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px auto;
+    }
+
+    .sec-eyebrow {
+        color: var(--pcolor);
+        font-size: 15px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .sec-title {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: clamp(32px, 4vw, 52px);
+        text-transform: uppercase;
+        color: white;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .sec-desc {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .container-xl {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+    /* ===================================================
+       SECTION 1 — ABOUT
+    =================================================== */
+    .about-section {
+        background: var(--dark);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+    .about-img-wrap {
+        position: relative;
+        height: 500px;
+    }
+
+    .about-img-main {
+        width: 80%;
+        height: 85%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 6px solid var(--dark);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .about-img-sub {
+        width: 55%;
+        height: 55%;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border: 6px solid var(--dark);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .about-badge {
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        background: var(--pcolor);
+        color: white;
+        padding: 20px;
+        width: 130px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.3;
+        text-transform: uppercase;
+    }
+
+    .about-badge strong {
+        display: block;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 34px;
+    }
+
+    .about-content span.sec-eyebrow {
+        text-align: left;
+    }
+
+    .about-content h2 {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: clamp(30px, 4vw, 46px);
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .about-content p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .about-points {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .about-points div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+        font-size: 16px;
+    }
+
+    .about-points span {
+        color: var(--pcolor);
+        font-size: 22px;
+    }
+
+    @media (max-width:900px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-img-wrap {
+            height: 420px;
+        }
+    }
+
+    /* ===================================================
+       SECTION 2 — SERVICES
+    =================================================== */
+    .services-section {
+        background: #0c0c0c;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+
+    .service-card {
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 40px 30px;
+        transition: .5s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        background: var(--pcolor);
+        transform: translateY(-8px);
+    }
+
+    .service-card span.material-symbols-outlined {
+        font-size: 40px;
+        color: var(--pcolor);
+        margin-bottom: 25px;
+        display: block;
+        transition: .5s ease;
+    }
+
+    .service-card:hover span.material-symbols-outlined {
+        color: white;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+
+    .service-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        transition: .5s ease;
+    }
+
+    .service-card:hover p {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width:1100px) {
+        .services-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:550px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 3 — WHY CHOOSE US (stats + image)
+    =================================================== */
+    .why-section {
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.82)),
+            url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1600&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px;
+        align-items: center;
+    }
+
+    .why-content span.sec-eyebrow {
+        text-align: left;
+    }
+
+    .why-content h2 {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: clamp(30px, 4vw, 46px);
+        text-transform: uppercase;
+        color: white;
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .why-content p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .stat-box {
+        border-left: 3px solid var(--pcolor);
+        padding-left: 20px;
+    }
+
+    .stat-box strong {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 48px;
+        color: white;
+        display: block;
+    }
+
+    .stat-box span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width:900px) {
+        .why-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 4 — HOW WE WORK (process)
+    =================================================== */
+    .process-section {
+        background: var(--dark);
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+
+    .process-card {
+        text-align: center;
+        padding: 40px 25px;
+        position: relative;
+    }
+
+    .process-num {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 60px;
+        color: rgba(255, 255, 255, 0.08);
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .process-card span.material-symbols-outlined {
+        font-size: 36px;
+        color: var(--pcolor);
+        margin-bottom: 20px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .process-card h3 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    .process-card p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        line-height: 1.6;
+        position: relative;
+    }
+
+    @media (max-width:1000px) {
+        .process-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:550px) {
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 5 — CASE STUDIES
+    =================================================== */
+    .cases-section {
+        background: #0c0c0c;
+    }
+
+    .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+
+    .case-card {
+        position: relative;
+        height: 420px;
+        overflow: hidden;
+    }
+
+    .case-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .6s ease;
+    }
+
+    .case-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .case-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 70%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+    }
+
+    .case-overlay span {
+        color: var(--pcolor);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .case-overlay h3 {
+        color: white;
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    @media (max-width:1000px) {
+        .cases-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:650px) {
+        .cases-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 6 — MEET OUR DETECTIVES (team)
+    =================================================== */
+    .team-section {
+        background: var(--dark);
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+
+    .team-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team-img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        filter: grayscale(60%);
+        transition: .5s ease;
+    }
+
+    .team-card:hover .team-img {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    .team-info {
+        background: #141414;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 3px solid var(--pcolor);
+    }
+
+    .team-info h3 {
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+
+    .team-info p {
+        color: var(--pcolor);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width:1000px) {
+        .team-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:550px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 7 — TESTIMONIALS
+    =================================================== */
+    .testimonial-section {
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+            url("https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=1600&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px 30px;
+    }
+
+    .testimonial-card span.material-symbols-outlined {
+        font-size: 34px;
+        color: var(--pcolor);
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .testimonial-card p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-person {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .testimonial-person img {
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .testimonial-person h4 {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+
+    .testimonial-person span.role {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+    }
+
+    @media (max-width:1000px) {
+        .testimonial-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================================================
+       SECTION 8 — CTA / CONTACT BANNER
+    =================================================== */
+    .cta-section {
+        background: var(--pcolor);
+    }
+
+    .cta-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+
+    .cta-grid h2 {
+        font-family: "Tenor Sans", sans-serif;
+        font-size: clamp(28px, 4vw, 44px);
+        text-transform: uppercase;
+        color: white;
+        font-weight: 400;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .cta-grid p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 16px;
+    }
+
+    .cta-btn-wrap {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .cta-btn {
+        padding: 16px 40px;
+        background: var(--dark);
+        color: white;
+        border: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: .5s ease;
+        text-decoration: none;
+    }
+
+    .cta-btn:hover {
+        background: white;
+        color: var(--pcolor);
+    }
+
+    @media (max-width:800px) {
+        .cta-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .cta-btn-wrap {
+            justify-content: center;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+        <header class="header">
+
+        <div class="head1">
+            <div class="logo-container">
+                <a href="index.html"><img src="./src/logo.webp" alt="company logo" class="companylogo"></a>
+            </div>
+
+            <div class="time-container">
+                <div class="time-wraper">
+                    <span class="material-symbols-outlined">nest_clock_farsight_analog</span>
+
+                    <div>
+                        <h3>OFFICE HOURS <br> Mon - Fri 8:30 - 5:00</h3>
+
+                        <p>After Hours Appoinments <br> Available Upon Request</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="call-container">
+                <div class="call-wraper">
+                    <span class="material-symbols-outlined">call</span>
+
+                    <div>
+
+                        <a href="404.html">+91 54321 67890 </a>
+
+                        <a href="404.html">+91 09876 54321</a>
+
+                        <a href="404.html">info@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-container">
+                <a href="login.html" class="login-btn">Login <span class="material-symbols-outlined">
+                        login
+                    </span> </a>
+                <p>Solve Your Problems</p>
+            </div>
+        </div>
+
+        <div class="head2">
+
+            <div class="nav-logo-container">
+                <a href="index.html"><img src="./src/logo.webp" class="nav-logo"></a>
+
+            </div>
+
+            <div class="nav-links">
+
+                <div class="side-logo-wraper">
+                    <a href="index.html" class="sidelogo"><img src="./src/logo.webp" alt=""></a>
+                    <span class="material-symbols-outlined close-btn">close</span></a>
+                </div>
+
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="service.html">Services</a>
+                <a href="blog.html">Blogs</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="nav-sotial-icons">
+
+                <div class="nav-sotial">
+                    <a href="404.html"> <i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"> <i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+                <div class="menu-continer">
+                    <a href="login" class="log-icon"><span class="material-symbols-outlined">person</span></a>
+                    <a href="login.html" class="login-btn">Login </a>
+                    <span class="material-symbols-outlined menu-btn">menu</span>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="hero-section">
+
+        <div class="h-section-content">
+
+            <div class="hero-text">
+                <h2 class="h-sub-title">Every secret has</h2>
+                <h1 class="h-title">A witness</h1>
+
+                <div class="h-find-container">
+
+
+                    <div class="h-cases">
+                        <div class="h-case-icon">
+                            <span class="material-symbols-outlined errorpage">gavel</span>
+                            <p>Active Case</p>
+                        </div>
+
+                        <div class="h-case-icon">
+                            <span class="material-symbols-outlined errorpage">verified_user</span>
+                            <p>100% Confidential</p>
+                        </div>
+
+                        <div class="h-case-icon">
+                            <span class="material-symbols-outlined errorpage">schedule</span>
+                            <p>24/7 Support</p>
+                        </div>
+                    </div>
+
+                    <div class="h-cases2">
+                        <h3>we find what others miss</h3>
+                        <div>
+                            <button class="her-btns errorpage"> Learn More<span
+                                    class="material-symbols-outlined">keyboard_double_arrow_right</span></button>
+                            <p>Where every investigation begins with trust <br> and ends with the truth.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="h-section-right">
+                <p><span class="material-symbols-outlined">siren</span>Connect Vestigae</p>
+
+                <div class="h-vestigae-continer">
+                    <div class="h-vestigae1">
+
+                    </div>
+
+                    <div class="h-vestigae2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+<!-- ============ SECTION 1: ABOUT ============ -->
+<section class="about-section">
+    <div class="about-grid">
+        <div class="about-img-wrap">
+            <img class="about-img-main"
+                src="./src/h3.webp"
+                alt="Private investigator reviewing case files">
+            <img class="about-img-sub"
+                src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184?q=80&w=800&auto=format&fit=crop"
+                alt="Detective examining evidence board">
+            <div class="about-badge"><strong>18+</strong>Years of Experience</div>
+        </div>
+
+        <div class="about-content">
+            <span class="sec-eyebrow">Who We Are</span>
+            <h2>Discreet Investigations, Verified Truths</h2>
+            <p>Vestigae Detective Agency has spent nearly two decades uncovering facts hidden in plain sight.
+                Our licensed investigators combine field surveillance, digital forensics, and old-fashioned
+                legwork to give clients answers they can act on.</p>
+
+            <div class="about-points">
+                <div><span class="material-symbols-outlined">check_circle</span> Licensed & Insured Investigators
+                </div>
+                <div><span class="material-symbols-outlined">check_circle</span> Court-Admissible Evidence Reports
+                </div>
+                <div><span class="material-symbols-outlined">check_circle</span> Strict Client Confidentiality</div>
+            </div>
+
+            <button class="her-btns">More About Us <span
+                    class="material-symbols-outlined">keyboard_double_arrow_right</span></button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 2: SERVICES ============ -->
+<section class="services-section">
+    <div class="container-xl" style="padding-bottom:0;">
+        <div class="sec-title-wrap">
+            <span class="sec-eyebrow">What We Do</span>
+            <h2 class="sec-title">Our Investigation Services</h2>
+            <p class="sec-desc">From corporate due-diligence to personal matters, our team handles every case
+                with precision and discretion.</p>
+        </div>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <span class="material-symbols-outlined">visibility</span>
+            <h3>Surveillance</h3>
+            <p>Covert monitoring for infidelity, insurance fraud, and behavioral verification cases.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">domain</span>
+            <h3>Corporate Investigation</h3>
+            <p>Due diligence, employee misconduct, and internal fraud investigations for businesses.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">fingerprint</span>
+            <h3>Background Verification</h3>
+            <p>Comprehensive checks on individuals for hiring, tenancy, and pre-marital screening.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">lan</span>
+            <h3>Cyber Investigation</h3>
+            <p>Digital footprint tracing, online fraud detection, and data recovery services.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">family_restroom</span>
+            <h3>Family & Marital Cases</h3>
+            <p>Sensitive, confidential handling of custody disputes and matrimonial investigations.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">gavel</span>
+            <h3>Legal Support</h3>
+            <p>Evidence gathering and witness location to support ongoing litigation.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">location_searching</span>
+            <h3>Missing Persons</h3>
+            <p>Skip tracing and locating missing family members or individuals of interest.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="material-symbols-outlined">security</span>
+            <h3>Asset Protection</h3>
+            <p>Risk assessments and protective intelligence for high-value individuals and assets.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 3: WHY CHOOSE US ============ -->
+<section class="why-section">
+    <div class="why-grid">
+        <div class="why-content">
+            <span class="sec-eyebrow">Why Choose Vestigae</span>
+            <h2>Proven Results, Absolute Discretion</h2>
+            <p>Every case is assigned to a dedicated investigator who reports directly to you. No
+                subcontracting, no shortcuts — just meticulous work backed by a track record clients trust.</p>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <strong>1,200+</strong>
+                    <span>Cases Solved</span>
+                </div>
+                <div class="stat-box">
+                    <strong>97%</strong>
+                    <span>Success Rate</span>
+                </div>
+                <div class="stat-box">
+                    <strong>24/7</strong>
+                    <span>Availability</span>
+                </div>
+                <div class="stat-box">
+                    <strong>18</strong>
+                    <span>Years in Field</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1000&auto=format&fit=crop"
+                alt="Investigator analyzing surveillance footage"
+                style="width:100%; height:500px; object-fit:cover; border:6px solid var(--dark);">
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 4: HOW WE WORK ============ -->
+<section class="process-section">
+    <div class="container-xl" style="padding-bottom:0;">
+        <div class="sec-title-wrap">
+            <span class="sec-eyebrow">Our Process</span>
+            <h2 class="sec-title">How We Work</h2>
+            <p class="sec-desc">A clear, structured process from your first call to case closure.</p>
+        </div>
+    </div>
+
+    <div class="process-grid">
+        <div class="process-card">
+            <span class="process-num">01</span>
+            <span class="material-symbols-outlined">chat</span>
+            <h3>Consultation</h3>
+            <p>We discuss your situation confidentially and outline possible approaches.</p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-num">02</span>
+            <span class="material-symbols-outlined">fact_check</span>
+            <h3>Case Planning</h3>
+            <p>Our team designs an investigation strategy tailored to your case.</p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-num">03</span>
+            <span class="material-symbols-outlined">search</span>
+            <h3>Investigation</h3>
+            <p>Field agents and analysts gather verified evidence discreetly.</p>
+        </div>
+
+        <div class="process-card">
+            <span class="process-num">04</span>
+            <span class="material-symbols-outlined">summarize</span>
+            <h3>Detailed Report</h3>
+            <p>You receive a complete, court-ready report with findings and proof.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 5: CASE STUDIES ============ -->
+<section class="cases-section">
+    <div class="container-xl" style="padding-bottom:0;">
+        <div class="sec-title-wrap">
+            <span class="sec-eyebrow">Our Track Record</span>
+            <h2 class="sec-title">Recent Case Studies</h2>
+            <p class="sec-desc">A look at the kinds of cases our agency has closed successfully.</p>
+        </div>
+    </div>
+
+    <div class="cases-grid">
+        <div class="case-card">
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=900&auto=format&fit=crop"
+                alt="Corporate fraud case investigation">
+            <div class="case-overlay">
+                <span>Corporate</span>
+                <h3>Internal Fraud Exposed</h3>
+            </div>
+        </div>
+
+        <div class="case-card">
+            <img src="https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=900&auto=format&fit=crop"
+                alt="Surveillance case study">
+            <div class="case-overlay">
+                <span>Surveillance</span>
+                <h3>Insurance Fraud Ring</h3>
+            </div>
+        </div>
+
+        <div class="case-card">
+            <img src="https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=900&auto=format&fit=crop"
+                alt="Missing persons case study">
+            <div class="case-overlay">
+                <span>Missing Persons</span>
+                <h3>Family Reunited After 6 Years</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 6: MEET OUR DETECTIVES ============ -->
+<section class="team-section">
+    <div class="container-xl" style="padding-bottom:0;">
+        <div class="sec-title-wrap">
+            <span class="sec-eyebrow">Our Experts</span>
+            <h2 class="sec-title">Meet Our Detectives</h2>
+            <p class="sec-desc">Licensed professionals with backgrounds in law enforcement, law, and digital
+                forensics.</p>
+        </div>
+    </div>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <img class="team-img"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop"
+                alt="Lead detective portrait">
+            <div class="team-info">
+                <h3>Arjun Menon</h3>
+                <p>Lead Investigator</p>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img class="team-img"
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop"
+                alt="Senior investigator portrait">
+            <div class="team-info">
+                <h3>Divya Krishnan</h3>
+                <p>Corporate Investigations</p>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img class="team-img"
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
+                alt="Cyber investigator portrait">
+            <div class="team-info">
+                <h3>Karthik Raja</h3>
+                <p>Cyber Forensics</p>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img class="team-img"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop"
+                alt="Field agent portrait">
+            <div class="team-info">
+                <h3>Priya Suresh</h3>
+                <p>Field Surveillance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 7: TESTIMONIALS ============ -->
+<section class="testimonial-section">
+    <div class="container-xl" style="padding-bottom:0;">
+        <div class="sec-title-wrap">
+            <span class="sec-eyebrow">Client Stories</span>
+            <h2 class="sec-title">What Our Clients Say</h2>
+            <p class="sec-desc">Real feedback from cases we've handled with care and discretion.</p>
+        </div>
+    </div>
+
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <span class="material-symbols-outlined">format_quote</span>
+            <p>The team was professional and kept me informed at every step. The evidence they gathered was
+                thorough and held up in court.</p>
+            <div class="testimonial-person">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                    alt="Client photo">
+                <div>
+                    <h4>Ramesh Iyer</h4>
+                    <span class="role">Business Owner</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="material-symbols-outlined">format_quote</span>
+            <p>Extremely discreet and efficient. They helped my company uncover an internal fraud case within
+                weeks.</p>
+            <div class="testimonial-person">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                    alt="Client photo">
+                <div>
+                    <h4>Lakshmi Narayanan</h4>
+                    <span class="role">HR Director</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="material-symbols-outlined">format_quote</span>
+            <p>I was skeptical at first, but the report I received was detailed, accurate, and delivered right
+                on schedule.</p>
+            <div class="testimonial-person">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                    alt="Client photo">
+                <div>
+                    <h4>Vikram Singh</h4>
+                    <span class="role">Private Client</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SECTION 8: CTA ============ -->
+<section class="cta-section">
+    <div class="cta-grid">
+        <div>
+            <h2>Have a Case That Needs Answers?</h2>
+            <p>Book a confidential consultation with our investigators today.</p>
+        </div>
+
+        <div class="cta-btn-wrap">
+            <a href="contact.html" class="cta-btn">Contact Us <span
+                    class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+        </div>
+    </div>
+</section>
+
+
+    <footer class="footer">
+
+        <div class="footer1">
+
+            <div class="footer-logo-container">
+                <a href="index.html" class="footerlogo"><img src="./src/logo.webp" alt="footer-logo"></a>
+
+                <p>Trusted private investigators delivering confidential, accurate, and professional investigation
+                    services.</p>
+
+                <div class="footer-sotial">
+                    <a href="404.html"> <i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"> <i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+            </div>
+
+            <div class="fotoer-business">
+                <h1>Let's Talk About your <br>
+                    Business with us</h1>
+                <button class="fr-btn errorpage">Let's Get Started <span
+                        class="material-symbols-outlined">keyboard_double_arrow_right</span></button>
+            </div>
+        </div>
+
+        <div class="footer2">
+
+            <div class="footer-main1">
+                <h1>Our Pages</h1>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="service.html">Services</a>
+                    <a href="blog.html">Blogs</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-main1">
+                <h1>Our Services</h1>
+
+                <div class="footer-links">
+                    <a href="404.html">Private Investigation</a>
+                    <a href="404.html">Corporate Investigation</a>
+                    <a href="404.html">Background Verification</a>
+                    <a href="404.html">Surveillance Services</a>
+                    <a href="404.html">Cyber Investigation</a>
+                </div>
+            </div>
+
+            <div class="footer-main1">
+                <h1>Quick Links</h1>
+
+                <div class="footer-links">
+                    <a href="404.html">About Agency</a>
+                    <a href="404.html">Our Detectives</a>
+                    <a href="404.html">Case Studies</a>
+                    <a href="404.html">Our Projects</a>
+                    <a href="404.html">FAQs</a>
+                </div>
+            </div>
+
+            <div class="footer-main1">
+                <h1>Contact</h1>
+
+                <div class="footer-links f-con-links">
+                    <a href="404.html"> <span class="material-symbols-outlined">call</span>+91 12345 98760</a>
+                    <a href="404.html"> <span class="material-symbols-outlined">mail</span>info@gmail.com</a>
+                    <a href="404.html"> <span class="material-symbols-outlined">location_on</span>Chennai,Tamilnadu</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer3">
+            <p>Copyright @ 2026 Powered by Stackly</p>
+            <div>
+                <a href="404.html">Terms & Conditions</a>
+                <a href="404.html">Privacy Policy</a>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
