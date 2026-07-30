@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestigae - Admin Dashboard</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pcolor: #ff5533;
+            --hcolor: #ff8a33;
+            --dark: black;
+            --panel: #0c0c0c;
+            --card: #141414;
+        }
+
+        body {
+            background: var(--panel);
+            font-family: "Roboto Condensed", sans-serif;
+            display: flex;
+            gap: 0px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ================= SIDEBAR ================= */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background: var(--dark);
+            padding: 25px 18px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: sticky;
+
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 8px 25px;
+            border-bottom: 1px solid #262626;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-logo img {
+            width: 160px;
+        }
+
+        .sidebar-logo .adminclose {
+            color: white;
+            display: none;
+        }
+
+        .nav-group-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            padding: 0 10px;
+            margin-bottom: 12px;
+        }
+
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .side-nav button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: #999;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            cursor: pointer;
+            text-align: left;
+            transition: .3s ease;
+        }
+
+        .side-nav button .material-symbols-outlined {
+            font-size: 20px;
+        }
+
+        .side-nav button:hover {
+            background: #1c1c1c;
+            color: #fff;
+        }
+
+        .side-nav button.active {
+            background: var(--pcolor);
+            color: #fff;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: #1c1c1c;
+            border-left: 3px solid var(--pcolor);
+        }
+
+        .sidebar-footer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sidebar-footer h4 {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .sidebar-footer span {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= MAIN AREA ================= */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: #141414;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #232323;
+        }
+
+        .topbarimgcontainer {
+            display: none;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .topbarimgcontainer .topbarmenu {
+            font-size: 20px;
+            display: none;
+            color: white;
+        }
+
+        .topbarimgcontainer img {
+            width: 140px;
+            display: none;
+        }
+
+        .topbar h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #0c0c0c;
+            border: 1px solid var(--pcolor);
+            padding: 10px 16px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            width: 180px;
+            color: white;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        .search-box>.material-symbols-outlined {
+            color: var(--pcolor);
+            font-size: 18px;
+        }
+
+        .topbar-right>.material-symbols-outlined {
+            color: white;
+            cursor: pointer;
+        }
+
+        .topbar-avatar img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--pcolor);
+        }
+
+        .view {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .view.active {
+            display: flex;
+        }
+
+        /* reused button style (matches .page-btn) */
+        .d-btn {
+            padding: 10px 20px;
+            background: var(--pcolor);
+            border: 1px solid var(--pcolor);
+            color: white;
+            cursor: pointer;
+            transition: .5s ease;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-weight: 600;
+            font-family: "Roboto Condensed", sans-serif;
+            text-wrap: nowrap;
+        }
+
+        .d-btn:hover {
+            background: transparent;
+            color: var(--pcolor);
+        }
+
+
+        /* generic panel */
+        .panel {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 25px;
+            overflow-x: auto;
+            margin: 10px;
+        }
+
+
+        .panel h3 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.6;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+
+        }
+
+           .panel-head h3{
+            margin-bottom: 0;
+           }
+
+
+        /* stat cards */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: .4s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--pcolor);
+        }
+
+        .stat-card .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-card .material-symbols-outlined {
+            background: var(--pcolor);
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .stat-card h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            color: white;
+        }
+
+        .stat-card p {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .stat-card .delta {
+            font-size: 12px;
+            color: #1fa855;
+        }
+
+        .stat-card .delta.down {
+            color: var(--pcolor);
+        }
+
+        /* table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        thead th {
+            text-align: left;
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 12px;
+            border-bottom: 1px solid #262626;
+            font-weight: 600;
+        }
+
+        tbody td {
+            padding: 14px 12px;
+            font-size: 13px;
+            color: #ddd;
+            border-bottom: 1px solid #1e1e1e;
+            text-wrap: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cell-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .cell-item img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .badge.delivered {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.transit {
+            background: rgba(255, 138, 51, 0.15);
+            color: var(--hcolor);
+        }
+
+        .badge.pending {
+            background: rgba(255, 85, 51, 0.15);
+            color: var(--pcolor);
+        }
+
+        .badge.active {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.maintenance {
+            background: rgba(255, 85, 51, 0.15);
+            color: var(--pcolor);
+        }
+
+        /* two column layout */
+        .split-2 {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        /* investigators grid */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .fleet-card {
+            border: 1px solid #232323;
+            overflow: hidden;
+            background: var(--card);
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            filter: grayscale(50%);
+            transition: .5s ease;
+        }
+
+        .fleet-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .fleet-card-body {
+            padding: 16px;
+            border-top: 3px solid var(--pcolor);
+        }
+
+        .fleet-card-body h4 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .fleet-card-body p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        /* branches gallery */
+        .wh-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .wh-card {
+            position: relative;
+            overflow: hidden;
+            height: 190px;
+        }
+
+        .wh-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .wh-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .wh-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+
+        .wh-card .overlay h4 {
+            color: #fff;
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .wh-card .overlay span {
+            color: var(--hcolor);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* client cards */
+        .cust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cust-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cust-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 1px solid var(--pcolor);
+        }
+
+        .cust-card h4 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .cust-card span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .cust-card .cust-stat {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--pcolor);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        @media (max-width: 1100px) {
+
+            .stat-row,
+            .fleet-grid,
+            .wh-grid,
+            .cust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                position: fixed;
+                inset: 0px;
+                transform: translateX(-120%);
+                transition: .2s ease;
+                z-index: 9999;
+                width: 320px;
+
+            }
+
+            .topbar-right>.material-symbols-outlined {
+                color: white;
+                cursor: pointer;
+            }
+
+            .sidebar.vis {
+                transform: translateX(0);
+            }
+
+            .topbar>h2 {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .topbar {
+                padding: 10px 10px;
+            }
+
+            .topbarimgcontainer {
+                display: flex;
+            }
+
+            .sidebar-logo {
+                justify-content: space-between;
+            }
+
+            .sidebar-logo .adminclose {
+                display: block;
+            }
+
+            .topbarimgcontainer .topbarmenu {
+                display: block;
+                color: white;
+            }
+
+            .topbarimgcontainer img {
+                display: block;
+            }
+
+            .topbar-right>span {
+                font-size: 20px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+
+            .stat-row,
+            .fleet-grid,
+            .wh-grid,
+            .cust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="./src/logo.webp" alt="Vestigae logo" class="logimg">
+            <span class="material-symbols-outlined adminclose">close</span>
+        </div>
+
+        <span class="nav-group-label">Case Management</span>
+        <nav class="side-nav">
+            <button class="active" onclick="showView('overview', this)"><span
+                    class="material-symbols-outlined">dashboard</span> Overview</button>
+            <button onclick="showView('cases', this)"><span class="material-symbols-outlined">folder_open</span>
+                Cases</button>
+            <button onclick="showView('investigators', this)"><span
+                    class="material-symbols-outlined">badge</span> Investigators</button>
+            <button onclick="showView('branches', this)"><span class="material-symbols-outlined">business</span>
+                Branches</button>
+
+            <button onclick="showView('clients', this)"><span class="material-symbols-outlined">group</span>
+                Clients</button>
+            <button class="logoutbtn"><span class="material-symbols-outlined">logout</span>
+                Logout</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                alt="Admin">
+            <div>
+                <h4 id="username">Arjun Menon</h4>
+                <span>Lead Investigator</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <div class="topbar">
+            <div class="topbarimgcontainer">
+                <span class="material-symbols-outlined topbarmenu">menu</span>
+                <img src="./src/logo.webp" alt="Vestigae logo" class="logimg">
+            </div>
+            <h2 id="topbarTitle">Overview</h2>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search cases, clients...">
+                </div>
+                <span class="material-symbols-outlined errorpage">notifications</span>
+                <div class="topbar-avatar"><img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                        alt="Admin"></div>
+            </div>
+        </div>
+
+        <!-- ========== 1. OVERVIEW VIEW ========== -->
+        <div class="view active" id="overview">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">folder_open</span></div>
+                    <h2>1,246</h2>
+                    <p>Total Cases Handled</p>
+                    <span class="delta">+15.2% this month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">badge</span></div>
+                    <h2>32</h2>
+                    <p>Active Investigators</p>
+                    <span class="delta">+3 new hires</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">gavel</span></div>
+                    <h2>58</h2>
+                    <p>Open Cases In Progress</p>
+                    <span class="delta">+8.7% this week</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">payments</span></div>
+                    <h2>$1.24M</h2>
+                    <p>Agency Revenue</p>
+                    <span class="delta">+11.4% this month</span>
+                </div>
+            </div>
+
+            <div class="split-2">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3> Activity</h3>
+                        <button class="d-btn errorpage">View All</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Case Type</th>
+                                <th>Latest Update</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="cell-item">#VG-4521</td>
+                                <td>Corporate Investigation</td>
+                                <td>Evidence Submitted</td>
+                                <td><span class="badge delivered">Closed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#VG-4518</td>
+                                <td>Matrimonial Case</td>
+                                <td>Surveillance Underway</td>
+                                <td><span class="badge transit">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#VG-4514</td>
+                                <td>Background Verification</td>
+                                <td>Report Under Review</td>
+                                <td><span class="badge pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#VG-4509</td>
+                                <td>Missing Person</td>
+                                <td>Client Report Delivered</td>
+                                <td><span class="badge delivered">Closed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>Agency Workload Status</h3>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Investigator Utilization</td>
+                                <td style="text-align:right;font-weight:600;color:white;">78%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Open Case Slots</td>
+                                <td style="text-align:right;font-weight:600;color:white;">14</td>
+                            </tr>
+
+                            <tr>
+                                <td>Field Agents Deployed</td>
+                                <td style="text-align:right;font-weight:600;color:white;">18 / 22</td>
+                            </tr>
+
+                            <tr>
+                                <td>Reports Pending Review</td>
+                                <td style="text-align:right;font-weight:600;color:white;">9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. CASES VIEW ========== -->
+        <div class="view" id="cases">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">folder_open</span>
+                    </div>
+                    <h2>58</h2>
+                    <p>Open Cases</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">move_to_inbox</span>
+                    </div>
+                    <h2>21</h2>
+                    <p>New Case Requests</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">task_alt</span>
+                    </div>
+                    <h2>1,188</h2>
+                    <p>Closed Cases</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">priority_high</span>
+                    </div>
+                    <h2>7</h2>
+                    <p>Urgent Cases</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Cases </h3>
+                    <button class="d-btn errorpage">Open New Case</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reference</th>
+                            <th>Client</th>
+                            <th>Case Type</th>
+                            <th>Investigator</th>
+                            <th>Date Opened</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>#VG-4521</td>
+                            <td>Vantra Retail</td>
+                            <td>Internal Fraud</td>
+                            <td>Divya Krishnan</td>
+                            <td>Jul 08</td>
+                            <td><span class="badge delivered">Closed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4518</td>
+                            <td>R. Iyer</td>
+                            <td>Matrimonial Case</td>
+                            <td>Priya Suresh</td>
+                            <td>Jul 07</td>
+                            <td><span class="badge transit">In Progress</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4514</td>
+                            <td>Coastline Exports</td>
+                            <td>Background Check</td>
+                            <td>Karthik Raja</td>
+                            <td>Jul 07</td>
+                            <td><span class="badge pending">Pending</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4509</td>
+                            <td>V. Singh</td>
+                            <td>Missing Person</td>
+                            <td>Arjun Menon</td>
+                            <td>Jul 06</td>
+                            <td><span class="badge delivered">Closed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4503</td>
+                            <td>Nova Electronics</td>
+                            <td>Cyber Fraud</td>
+                            <td>Karthik Raja</td>
+                            <td>Jul 05</td>
+                            <td><span class="badge transit">In Progress</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========== 3. INVESTIGATORS VIEW ========== -->
+        <div class="view" id="investigators">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">badge</span></div>
+                    <h2>32</h2>
+                    <p>Total Investigators</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">visibility</span></div>
+                    <h2>14</h2>
+                    <p>Field Agents</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">lan</span></div>
+                    <h2>6</h2>
+                    <p>Cyber Specialists</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">event_busy</span></div>
+                    <h2>3</h2>
+                    <p>On Leave</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Investigator Roster</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop"
+                            alt="Arjun Menon">
+                        <div class="fleet-card-body">
+                            <h4>Arjun Menon</h4>
+                            <p>Lead Investigator - 24 Active Cases</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop"
+                            alt="Divya Krishnan">
+                        <div class="fleet-card-body">
+                            <h4>Divya Krishnan</h4>
+                            <p>Corporate Investigations - 18 Active Cases</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
+                            alt="Karthik Raja">
+                        <div class="fleet-card-body">
+                            <h4>Karthik Raja</h4>
+                            <p>Cyber Forensics - 11 Active Cases</p>
+                            <span class="badge maintenance">On Leave</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop"
+                            alt="Priya Suresh">
+                        <div class="fleet-card-body">
+                            <h4>Priya Suresh</h4>
+                            <p>Field Surveillance - 20 Active Cases</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop"
+                            alt="Vikram Nair">
+                        <div class="fleet-card-body">
+                            <h4>Vikram Nair</h4>
+                            <p>Legal Support - 9 Active Cases</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=700&auto=format&fit=crop"
+                            alt="Meera Pillai">
+                        <div class="fleet-card-body">
+                            <h4>Meera Pillai</h4>
+                            <p>Background Verification - 15 Active Cases</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. BRANCHES VIEW ========== -->
+        <div class="view" id="branches">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">business</span></div>
+                    <h2>6</h2>
+                    <p>Active Branches</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">folder_copy</span></div>
+                    <h2>84%</h2>
+                    <p>Avg. Caseload Capacity</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">inventory_2</span></div>
+                    <h2>3,120</h2>
+                    <p>Evidence Files Stored</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">summarize</span></div>
+                    <h2>18</h2>
+                    <p>Reports Filed Today</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Branch Offices</h3>
+                <div class="wh-grid">
+                    <div class="wh-card">
+                        <img src="./src/s1.webp" alt="Chennai head office">
+                        <div class="overlay">
+                            <h4>Chennai HQ</h4><span>Caseload 92%</span>
+                        </div>
+                    </div>
+                    <div class="wh-card">
+                        <img src="./src/s2.webp" alt="Mumbai branch office">
+                        <div class="overlay">
+                            <h4>Mumbai Branch</h4><span>Caseload 78%</span>
+                        </div>
+                    </div>
+                    <div class="wh-card">
+                        <img src="./src/bg2.webp" alt="Bangalore branch office">
+                        <div class="overlay">
+                            <h4>Bangalore Branch</h4><span>Caseload 65%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Branch Case Snapshot</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Branch</th>
+                            <th>Specialty</th>
+                            <th>Open Cases</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chennai HQ</td>
+                            <td>Corporate Investigation</td>
+                            <td>42</td>
+                            <td><span class="badge active">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mumbai Branch</td>
+                            <td>Matrimonial Cases</td>
+                            <td>28</td>
+                            <td><span class="badge active">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bangalore Branch</td>
+                            <td>Cyber Investigation</td>
+                            <td>15</td>
+                            <td><span class="badge maintenance">Understaffed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========== 5. CLIENTS VIEW ========== -->
+        <div class="view" id="clients">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">group</span></div>
+                    <h2>1,046</h2>
+                    <p>Total Clients</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">person_add</span></div>
+                    <h2>58</h2>
+                    <p>New This Month</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">workspace_premium</span></div>
+                    <h2>142</h2>
+                    <p>Corporate Accounts</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">support_agent</span></div>
+                    <h2>19</h2>
+                    <p>Open Client Inquiries</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Client Directory</h3>
+                    <button class="d-btn errorpage">Add Client</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Contact</th>
+                            <th>Account Type</th>
+                            <th>Cases Filed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cell-item">Vantra Retail</td>
+                            <td>ramesh@vantra.com</td>
+                            <td>Corporate</td>
+                            <td>212</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">Ferro Parts</td>
+                            <td>anjali@ferroparts.com</td>
+                            <td>Business</td>
+                            <td>168</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">Coastline Exports</td>
+                            <td>david@coastline.com</td>
+                            <td>Business</td>
+                            <td>134</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">Nova Electronics</td>
+                            <td>priya@novaelec.com</td>
+                            <td>Corporate</td>
+                            <td>96</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+
+        //
+        const topbarmenu = document.querySelector(".topbarmenu")
+        const adminclose = document.querySelector(".adminclose")
+        const sidebar = document.querySelector(".sidebar")
+
+        topbarmenu.addEventListener("click", () => {
+            sidebar.classList.toggle('vis')
+        })
+
+        adminclose.addEventListener("click", () => {
+            sidebar.classList.remove('vis')
+        })
+
+        // 
+        const logoutbtn = document.querySelector(".logoutbtn")
+        logoutbtn.addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+
+        // email
+
+        const username = document.querySelector("#username");
+
+        const email = localStorage.getItem("useremail");
+
+        if (email) {
+            username.textContent = email.split("@")[0];
+        }
+
+        // errorpage
+        let errorpage = document.querySelectorAll(".errorpage")
+        errorpage.forEach((error) => {
+            error.addEventListener("click", () => {
+                window.location.href = "404.html";
+            })
+        })
+
+        // logimg
+
+        let logimg = document.querySelectorAll(".logimg")
+        logimg.forEach((img) => {
+            img.addEventListener("click", () => {
+                window.location.href = "admin.html";
+            })
+        })
+
+
+        const titles = {
+            overview: "Overview",
+            cases: "Cases",
+            investigators: "Investigators",
+            branches: "Branches",
+            clients: "Clients"
+        };
+
+        function showView(id, btn) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            document.querySelectorAll('.side-nav button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.getElementById('topbarTitle').innerText = titles[id];
+            sidebar.classList.remove('vis')
+        }
+    </script>
+
+</body>
+
+</html>

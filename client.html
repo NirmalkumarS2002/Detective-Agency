@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestigae - Client Dashboard</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pcolor: #ff5533;
+            --hcolor: #ff8a33;
+            --dark: black;
+            --panel: #0c0c0c;
+            --card: #141414;
+        }
+
+        body {
+            background: var(--panel);
+            font-family: "Roboto Condensed", sans-serif;
+            display: flex;
+            gap: 0px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ================= SIDEBAR ================= */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background: var(--dark);
+            padding: 25px 18px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: sticky;
+
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 8px 25px;
+            border-bottom: 1px solid #262626;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-logo img {
+            width: 160px;
+        }
+
+        .sidebar-logo .adminclose {
+            color: white;
+            display: none;
+        }
+
+        .nav-group-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            padding: 0 10px;
+            margin-bottom: 12px;
+        }
+
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .side-nav button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: #999;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            cursor: pointer;
+            text-align: left;
+            transition: .3s ease;
+        }
+
+        .side-nav button .material-symbols-outlined {
+            font-size: 20px;
+        }
+
+        .side-nav button:hover {
+            background: #1c1c1c;
+            color: #fff;
+        }
+
+        .side-nav button.active {
+            background: var(--pcolor);
+            color: #fff;
+        }
+
+        .side-nav .msg-count {
+            margin-left: auto;
+            background: white;
+            color: var(--pcolor);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 7px;
+        }
+
+        .side-nav button.active .msg-count {
+            background: var(--dark);
+            color: white;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: #1c1c1c;
+            border-left: 3px solid var(--pcolor);
+        }
+
+        .sidebar-footer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sidebar-footer h4 {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .sidebar-footer span {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= MAIN AREA ================= */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: #141414;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #232323;
+        }
+
+        .topbarimgcontainer {
+            display: none;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .topbarimgcontainer .topbarmenu {
+            font-size: 20px;
+            display: none;
+            color: white;
+        }
+
+        .topbarimgcontainer img {
+            width: 140px;
+            display: none;
+        }
+
+        .topbar h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #0c0c0c;
+            border: 1px solid var(--pcolor);
+            padding: 10px 16px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            width: 180px;
+            color: white;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        .search-box>.material-symbols-outlined {
+            color: var(--pcolor);
+            font-size: 18px;
+        }
+
+        .topbar-right>.material-symbols-outlined {
+            color: white;
+            cursor: pointer;
+        }
+
+        .topbar-avatar img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--pcolor);
+        }
+
+        .view {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .view.active {
+            display: flex;
+        }
+
+        .d-btn {
+            padding: 10px 20px;
+            background: var(--pcolor);
+            border: 1px solid var(--pcolor);
+            color: white;
+            cursor: pointer;
+            transition: .5s ease;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-weight: 600;
+            font-family: "Roboto Condensed", sans-serif;
+            text-wrap: nowrap;
+        }
+
+        .d-btn:hover {
+            background: transparent;
+            color: var(--pcolor);
+        }
+
+        .d-btn.ghost {
+            background: transparent;
+            color: var(--pcolor);
+        }
+
+        .d-btn.ghost:hover {
+            background: var(--pcolor);
+            color: white;
+        }
+
+        /* generic panel */
+        .panel {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 25px;
+            overflow-x: auto;
+            margin: 10px;
+        }
+
+        .panel h3 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px; 
+
+        }
+
+        .panel-head h3{
+            margin-bottom: 0px;
+            line-height: 1.3;
+        }
+
+        /* stat cards */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: .4s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--pcolor);
+        }
+
+        .stat-card .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-card .material-symbols-outlined {
+            background: var(--pcolor);
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .stat-card h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 28px;
+            color: white;
+        }
+
+        .stat-card p {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .stat-card .delta {
+            font-size: 12px;
+            color: #1fa855;
+        }
+
+        .stat-card .delta.down {
+            color: var(--pcolor);
+        }
+
+        /* table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        thead th {
+            text-align: left;
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 12px;
+            border-bottom: 1px solid #262626;
+            font-weight: 600;
+        }
+
+        tbody td {
+            padding: 14px 12px;
+            font-size: 13px;
+            color: #ddd;
+            border-bottom: 1px solid #1e1e1e;
+            text-wrap: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cell-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .cell-item img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .badge.delivered {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.transit {
+            background: rgba(255, 138, 51, 0.15);
+            color: var(--hcolor);
+        }
+
+        .badge.pending {
+            background: rgba(255, 85, 51, 0.15);
+            color: var(--pcolor);
+        }
+
+        .badge.active {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.maintenance {
+            background: rgba(255, 85, 51, 0.15);
+            color: var(--pcolor);
+        }
+
+        /* two column layout */
+        .split-2 {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        /* investigator profile card (overview side panel) */
+        .inv-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #232323;
+        }
+
+        .inv-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--pcolor);
+        }
+
+        .inv-profile h4 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .inv-profile span {
+            font-size: 12px;
+            color: var(--hcolor);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .inv-contact-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 12px;
+        }
+
+        .inv-contact-row .material-symbols-outlined {
+            font-size: 18px;
+            color: var(--pcolor);
+        }
+
+        /* reports grid */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .fleet-card {
+            border: 1px solid #232323;
+            overflow: hidden;
+            background: var(--card);
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            filter: grayscale(50%);
+            transition: .5s ease;
+        }
+
+        .fleet-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .fleet-card-body {
+            padding: 16px;
+            border-top: 3px solid var(--pcolor);
+        }
+
+        .fleet-card-body h4 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .fleet-card-body p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .fleet-card-body .d-btn {
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* message threads */
+        .msg-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: #232323;
+        }
+
+        .msg-item {
+            background: var(--card);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .msg-item:hover {
+            background: #1a1a1a;
+        }
+
+        .msg-item img {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .msg-item-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .msg-item-body h4 {
+            font-size: 14px;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .msg-item-body p {
+            font-size: 12px;
+            color: #999;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .msg-item-meta {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .msg-item-meta span {
+            font-size: 11px;
+            color: #777;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .msg-dot {
+            width: 9px;
+            height: 9px;
+            background: var(--pcolor);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* client cards */
+        .cust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cust-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cust-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 1px solid var(--pcolor);
+        }
+
+        .cust-card h4 {
+            font-family: "Tenor Sans", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .cust-card span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .cust-card .cust-stat {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--pcolor);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        @media (max-width: 1100px) {
+
+            .stat-row,
+            .fleet-grid,
+            .cust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                position: fixed;
+                inset: 0px;
+                transform: translateX(-120%);
+                transition: .2s ease;
+                z-index: 9999;
+                width: 320px;
+
+            }
+
+            .topbar-right>.material-symbols-outlined {
+                color: white;
+                cursor: pointer;
+            }
+
+            .sidebar.vis {
+                transform: translateX(0);
+            }
+
+            .topbar>h2 {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .topbar {
+                padding: 10px 10px;
+            }
+
+            .topbarimgcontainer {
+                display: flex;
+            }
+
+            .sidebar-logo {
+                justify-content: space-between;
+            }
+
+            .sidebar-logo .adminclose {
+                display: block;
+            }
+
+            .topbarimgcontainer .topbarmenu {
+                display: block;
+                color: white;
+            }
+
+            .topbarimgcontainer img {
+                display: block;
+            }
+
+            .topbar-right>span {
+                font-size: 20px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+
+            .stat-row,
+            .fleet-grid,
+            .cust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .msg-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="./src/logo.webp" alt="Vestigae logo" class="logimg">
+            <span class="material-symbols-outlined adminclose">close</span>
+        </div>
+
+        <span class="nav-group-label">My Account</span>
+        <nav class="side-nav">
+            <button class="active" onclick="showView('overview', this)"><span
+                    class="material-symbols-outlined">dashboard</span> Overview</button>
+            <button onclick="showView('cases', this)"><span class="material-symbols-outlined">folder_open</span>
+                My Cases</button>
+            <button onclick="showView('reports', this)"><span
+                    class="material-symbols-outlined">summarize</span> Reports</button>
+            <button onclick="showView('messages', this)"><span class="material-symbols-outlined">chat</span>
+                Messages <span class="msg-count">3</span></button>
+            <button onclick="showView('billing', this)"><span class="material-symbols-outlined">receipt_long</span>
+                Billing</button>
+            <button class="logoutbtn"><span class="material-symbols-outlined">logout</span>
+                Logout</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                alt="Client">
+            <div>
+                <h4 id="username">Ramesh Iyer</h4>
+                <span>Client</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <div class="topbar">
+            <div class="topbarimgcontainer">
+                <span class="material-symbols-outlined topbarmenu">menu</span>
+                <img src="./src/logo.webp" alt="Vestigae logo" class="logimg">
+            </div>
+            <h2 id="topbarTitle">Overview</h2>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search your cases...">
+                </div>
+                <span class="material-symbols-outlined errorpage">notifications</span>
+                <div class="topbar-avatar"><img
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                        alt="Client"></div>
+            </div>
+        </div>
+
+        <!-- ========== 1. OVERVIEW VIEW ========== -->
+        <div class="view active" id="overview">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">folder_open</span></div>
+                    <h2>3</h2>
+                    <p>Active Cases</p>
+                    <span class="delta">1 opened this month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">summarize</span></div>
+                    <h2>7</h2>
+                    <p>Reports Received</p>
+                    <span class="delta">+2 this week</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">chat</span></div>
+                    <h2>3</h2>
+                    <p>Unread Messages</p>
+                    <span class="delta down">Awaiting your reply</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">payments</span></div>
+                    <h2>$4,850</h2>
+                    <p>Total Paid To Date</p>
+                    <span class="delta">1 invoice pending</span>
+                </div>
+            </div>
+
+            <div class="split-2">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Updates</h3>
+                        <button class="d-btn errorpage">View All Cases</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Case Type</th>
+                                <th>Latest Update</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="cell-item">#VG-4518</td>
+                                <td>Matrimonial Case</td>
+                                <td>Surveillance Underway</td>
+                                <td><span class="badge transit">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#VG-4498</td>
+                                <td>Background Verification</td>
+                                <td>Report Ready For Review</td>
+                                <td><span class="badge pending">Awaiting You</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#VG-4471</td>
+                                <td>Asset Protection</td>
+                                <td>Risk Assessment Filed</td>
+                                <td><span class="badge delivered">Closed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>Your Investigator</h3>
+                    <div class="inv-profile">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"
+                            alt="Divya Krishnan">
+                        <div>
+                            <h4>Divya Krishnan</h4>
+                            <span>Assigned Investigator</span>
+                        </div>
+                    </div>
+
+                    <div class="inv-contact-row"><span class="material-symbols-outlined">call</span> +91 98765
+                        43210</div>
+                    <div class="inv-contact-row"><span class="material-symbols-outlined">mail</span>
+                        divya@vestigae.com</div>
+                    <div class="inv-contact-row"><span class="material-symbols-outlined">event</span> Next
+                        Consultation: Aug 04, 2026</div>
+
+                    <button class="d-btn errorpage" style="width:100%;margin-top:10px;">Message Investigator</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. MY CASES VIEW ========== -->
+        <div class="view" id="cases">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">folder_open</span>
+                    </div>
+                    <h2>3</h2>
+                    <p>Open Cases</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">task_alt</span>
+                    </div>
+                    <h2>5</h2>
+                    <p>Closed Cases</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">upload_file</span>
+                    </div>
+                    <h2>1</h2>
+                    <p>Awaiting Your Documents</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">priority_high</span>
+                    </div>
+                    <h2>1</h2>
+                    <p>Urgent</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Case History</h3>
+                    <button class="d-btn errorpage">New Case</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reference</th>
+                            <th>Case Type</th>
+                            <th>Investigator</th>
+                            <th>Date Opened</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>#VG-4518</td>
+                            <td>Matrimonial Case</td>
+                            <td>Priya Suresh</td>
+                            <td>Jul 07</td>
+                            <td><span class="badge transit">In Progress</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4498</td>
+                            <td>Background Verification</td>
+                            <td>Divya Krishnan</td>
+                            <td>Jun 21</td>
+                            <td><span class="badge pending">Awaiting You</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4471</td>
+                            <td>Asset Protection</td>
+                            <td>Arjun Menon</td>
+                            <td>May 30</td>
+                            <td><span class="badge delivered">Closed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4402</td>
+                            <td>Legal Support</td>
+                            <td>Vikram Nair</td>
+                            <td>Apr 12</td>
+                            <td><span class="badge delivered">Closed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#VG-4360</td>
+                            <td>Cyber Investigation</td>
+                            <td>Karthik Raja</td>
+                            <td>Feb 02</td>
+                            <td><span class="badge delivered">Closed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========== 3. REPORTS VIEW ========== -->
+        <div class="view" id="reports">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">summarize</span></div>
+                    <h2>7</h2>
+                    <p>Total Reports</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">fiber_new</span></div>
+                    <h2>2</h2>
+                    <p>New This Week</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">photo_library</span></div>
+                    <h2>34</h2>
+                    <p>Evidence Files Attached</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">download</span></div>
+                    <h2>12</h2>
+                    <p>Downloads This Month</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Case Reports & Documents</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=700&auto=format&fit=crop"
+                            alt="Surveillance report">
+                        <div class="fleet-card-body">
+                            <h4>Surveillance Report - #VG-4518</h4>
+                            <p>Filed Jul 24, 2026 &middot; Priya Suresh</p>
+                            <button class="d-btn ghost errorpage"><span
+                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                                Download</button>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=700&auto=format&fit=crop"
+                            alt="Background verification report">
+                        <div class="fleet-card-body">
+                            <h4>Verification Summary - #VG-4498</h4>
+                            <p>Filed Jul 15, 2026 &middot; Divya Krishnan</p>
+                            <button class="d-btn ghost errorpage"><span
+                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                                Download</button>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=700&auto=format&fit=crop"
+                            alt="Asset protection report">
+                        <div class="fleet-card-body">
+                            <h4>Risk Assessment - #VG-4471</h4>
+                            <p>Filed Jun 02, 2026 &middot; Arjun Menon</p>
+                            <button class="d-btn ghost errorpage"><span
+                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                                Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. MESSAGES VIEW ========== -->
+        <div class="view" id="messages">
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Messages</h3>
+                    <button class="d-btn errorpage">New Message</button>
+                </div>
+
+                <div class="msg-grid">
+                    <div class="msg-item errorpage">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"
+                            alt="Divya Krishnan">
+                        <div class="msg-item-body">
+                            <h4>Divya Krishnan</h4>
+                            <p>Your verification report is ready for review, please check the attached...</p>
+                        </div>
+                        <div class="msg-item-meta">
+                            <span>10:24 AM</span>
+                            <span class="msg-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="msg-item errorpage">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                            alt="Priya Suresh">
+                        <div class="msg-item-body">
+                            <h4>Priya Suresh</h4>
+                            <p>We completed the second round of surveillance, next update on Friday.</p>
+                        </div>
+                        <div class="msg-item-meta">
+                            <span>Yesterday</span>
+                            <span class="msg-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="msg-item errorpage">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                            alt="Arjun Menon">
+                        <div class="msg-item-body">
+                            <h4>Arjun Menon</h4>
+                            <p>Thank you for confirming, your case has now been closed and archived.</p>
+                        </div>
+                        <div class="msg-item-meta">
+                            <span>Jul 24</span>
+                        </div>
+                    </div>
+
+                    <div class="msg-item errorpage">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                            alt="Vikram Nair">
+                        <div class="msg-item-body">
+                            <h4>Vikram Nair</h4>
+                            <p>Please sign and return the attached authorization form at your convenience.</p>
+                        </div>
+                        <div class="msg-item-meta">
+                            <span>Jul 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 5. BILLING VIEW ========== -->
+        <div class="view" id="billing">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">payments</span></div>
+                    <h2>$4,850</h2>
+                    <p>Total Paid To Date</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">pending_actions</span></div>
+                    <h2>$650</h2>
+                    <p>Pending Invoice</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">receipt_long</span></div>
+                    <h2>8</h2>
+                    <p>Total Invoices</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">event_available</span></div>
+                    <h2>Aug 05</h2>
+                    <p>Next Payment Due</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Invoice History</h3>
+                    <button class="d-btn errorpage">Download All</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Case Reference</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cell-item">#INV-2231</td>
+                            <td>#VG-4518</td>
+                            <td>$650</td>
+                            <td>Jul 28, 2026</td>
+                            <td><span class="badge pending">Due Aug 05</span></td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">#INV-2214</td>
+                            <td>#VG-4498</td>
+                            <td>$1,200</td>
+                            <td>Jun 22, 2026</td>
+                            <td><span class="badge delivered">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">#INV-2187</td>
+                            <td>#VG-4471</td>
+                            <td>$2,000</td>
+                            <td>May 30, 2026</td>
+                            <td><span class="badge delivered">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">#INV-2145</td>
+                            <td>#VG-4402</td>
+                            <td>$1,000</td>
+                            <td>Apr 14, 2026</td>
+                            <td><span class="badge delivered">Paid</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+
+        //
+        const topbarmenu = document.querySelector(".topbarmenu")
+        const adminclose = document.querySelector(".adminclose")
+        const sidebar = document.querySelector(".sidebar")
+
+        topbarmenu.addEventListener("click", () => {
+            sidebar.classList.toggle('vis')
+        })
+
+        adminclose.addEventListener("click", () => {
+            sidebar.classList.remove('vis')
+        })
+
+        // 
+        const logoutbtn = document.querySelector(".logoutbtn")
+        logoutbtn.addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+
+        // email
+
+        const username = document.querySelector("#username");
+
+        const email = localStorage.getItem("useremail");
+
+        if (email) {
+            username.textContent = email.split("@")[0];
+        }
+
+        // errorpage
+        let errorpage = document.querySelectorAll(".errorpage")
+        errorpage.forEach((error) => {
+            error.addEventListener("click", () => {
+                window.location.href = "404.html";
+            })
+        })
+
+        // logimg
+
+        let logimg = document.querySelectorAll(".logimg")
+        logimg.forEach((img) => {
+            img.addEventListener("click", () => {
+                window.location.href = "client-dashboard.html";
+            })
+        })
+
+
+        const titles = {
+            overview: "Overview",
+            cases: "My Cases",
+            reports: "Reports",
+            messages: "Messages",
+            billing: "Billing"
+        };
+
+        function showView(id, btn) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            document.querySelectorAll('.side-nav button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.getElementById('topbarTitle').innerText = titles[id];
+            sidebar.classList.remove('vis')
+        }
+    </script>
+
+</body>
+
+</html>
