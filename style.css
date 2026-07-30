@@ -126,6 +126,11 @@ body {
     text-decoration: none;
     margin-bottom: 10px;
     color: white;
+    transition: .5s ease;
+}
+
+.call-wraper div a:hover {
+    color: var(--pcolor);
 }
 
 .login-container {
@@ -149,6 +154,26 @@ body {
     background: var(--pcolor);
     color: white;
     font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .5s ease;
+}
+
+.login-btn:hover span {
+    transform: translateX(5px);
+
+}
+
+.login-btn:hover {
+    box-shadow: 0px 0px 20px var(--pcolor);
+    transform: scale(1.1);
+}
+
+.login-btn span {
+    transition: .5s ease;
+    font-size: 20px;
 }
 
 /* head2 */
@@ -181,19 +206,30 @@ body {
     text-decoration: none;
     font-size: 16px;
     color: white;
+    transition: .6s ease;
+}
+
+.nav-links a:hover {
+    color: var(--pcolor);
 }
 
 .nav-sotial {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
 
 }
 
 .nav-sotial>a {
-    font-size: 30px;
+    font-size: 26px;
     color: white;
+    transition: .5S ease;
+}
+
+.nav-sotial>a:hover {
+    color: var(--pcolor);
+    transform: scale(1.2);
 }
 
 .menu-continer {
@@ -244,6 +280,17 @@ body {
         width: 160px;
     }
 
+    .close-btn{
+        color: white;
+        cursor: pointer;
+        font-size: 22px;
+        transition: .5s ease;
+    }
+
+     .close-btn:hover{
+        color: var(--pcolor);
+     }
+
     .nav-sotial-icons {
         border-left: none;
     }
@@ -261,7 +308,7 @@ body {
         top: 0;
         padding: 25px 25px;
         flex-direction: column;
-        background: red;
+        background: var(--dark);
         transition: .6s ease;
         transform: translateX(-100%);
     }
@@ -273,7 +320,18 @@ body {
     .menu-continer {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
+    }
+
+    .menu-btn {
+        color: var(--scolor);
+        font-size: 22px;
+        transition: .5s ease;
+        cursor: pointer;
+    }
+
+    .menu-btn:hover{
+        color: var(--pcolor);
     }
 
     .log-icon {
@@ -290,6 +348,17 @@ body {
             align-items: center;
             text-decoration: none;
         }
+
+        .log-icon span {
+            font-size: 22px;
+            color: white;
+            transition: .5s ease;
+             cursor: pointer;
+        }
+
+          .log-icon span:hover{
+            color: var(--pcolor);
+          }
 
         .nav-sotial {
             display: none;
