@@ -17,6 +17,381 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+
+        :root {
+            --pcolor: #ff5533;
+            --scolor: #FFFFFF;
+            --dark: black;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.678)), url("./src/h1.webp") center/cover no-repeat;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-page {
+            max-width: 1400px;
+            width: 100%;
+            background: black;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 30px;
+            gap: 30px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px black;
+        }
+
+        .left-page {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .log-a img {
+            width: 200px;
+        }
+
+        .log-head {
+            text-align: center;
+        }
+
+        .log-head h1 {
+            font-size: 40px;
+            margin: 10px;
+            color: white;
+        }
+
+        .log-head p {
+            font-size: 15px;
+            color: white;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+        .role-btns {
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .role-btn {
+            padding: 15px 30px;
+            color: black;
+            font-size: 16px;
+            border: 1px solid var(--pcolor);
+            background: #ff553333;
+            color: white;
+            border-radius: 7px;
+            transition: .5s ease;
+        }
+
+        .role-btn:hover {
+            background: var(--pcolor);
+        }
+
+        .role-btn.active {
+            background: var(--pcolor);
+        }
+
+        .inputbox {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .inputbox input {
+            padding: 15px 40px;
+            width: 100%;
+            border: 1px solid var(--pcolor);
+            background: transparent;
+            color: white;
+            border-radius: 7px;
+
+        }
+
+        .inputbox input:focus {
+            outline: none;
+            box-shadow: 0px 0px 20px #ff55338e;
+        }
+
+        .f-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+        .passeye {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-size: 20px;
+            color: var(--pcolor);
+            cursor: pointer;
+        }
+
+        .forget {
+            font-size: 15px;
+            text-align: right;
+            text-decoration: none;
+            margin-bottom: 20px;
+            color: white;
+            transform: .5s ease;
+        }
+
+        .forget:hover {
+            color: var(--pcolor);
+        }
+
+        .log-btn {
+            padding: 15px 30px;
+            background: var(--pcolor);
+            font-size: 15px;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            transition: .6s ease;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .log-btn span {
+            font-size: 20px;
+            transition: .5s ease;
+        }
+
+        .log-btn:hover span {
+            transform: translateX(5px);
+        }
+
+        .log-btn:hover {
+            box-shadow: 0px 0px 20px #ff55336e;
+        }
+
+        .log-foot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .log-foot>p {
+            font-size: 15px;
+            display: flex;
+            gap: 10px;
+            color: white;
+        }
+
+        .log-foot p a {
+            text-decoration: none;
+            margin-bottom: 10px;
+            color: var(--scolor);
+            transition: .5s ease;
+        }
+
+        .log-foot p a:hover {
+            color: var(--pcolor);
+        }
+
+        .or {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px 0;
+
+
+        }
+
+        .or::before,
+        .or::after {
+            content: "";
+            height: 1px;
+            width: 40px;
+            background: rgba(128, 128, 128, 0.445);
+        }
+
+
+        .or span {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .log-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .log-icons a {
+            height: 30px;
+            width: 70px;
+            background: white;
+            color: var(--pcolor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: .5s ease;
+            border-radius: 5px;
+        }
+
+        .log-icons a:hover {
+            background: var(--pcolor);
+            color: white;
+        }
+
+        .home-btn {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            text-decoration: none;
+            gap: 6px;
+            color: white;
+            transition: .5s ease;
+        }
+
+        .home-btn:hover {
+            color: var(--pcolor);
+        }
+
+        .home-btn span {
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+
+        /*leeft page*/
+
+        .right-page {
+            background: linear-gradient(125deg, rgba(255, 136, 0, 0.308), rgba(248, 29, 0, 0.315)), url("./src/log.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .right-page h1 {
+            font-size: 70px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .right-page p {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 15px;
+            color: white;
+        }
+
+        @media (max-width:1050px) {
+            .right-page h1 {
+                font-size: 50px;
+            }
+
+            .log-a img {
+                width: 160px;
+            }
+
+            .right-page p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width:850px) {
+            .login-page {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            body {
+                padding: 15px;
+            }
+
+            .left-page {
+                order: 2;
+                padding: 0px;
+                padding-block: 30px;
+            }
+
+            .right-page {
+                min-height: 500px;
+                order: 1;
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .login-page{
+                padding: 16px;
+            }
+            .right-page {
+                min-height: 300px;
+            }
+
+            .form {
+                width: 100%;
+            }
+
+            .right-page h1 {
+                font-size: 30px;
+            }
+
+            .left-page{
+                padding: 10px;
+            }
+
+            .log-a img {
+                width: 150px;
+            }
+
+            .right-page p {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -33,55 +408,59 @@
             <div class="form">
 
                 <div class="role-btns">
-                    <button class="role-btn active" data-role="Admin">Admin</button>
-                    <button class="role-btn" data-role="Client">Client</button>
+                    <button class="role-btn active btn1" data-role="Admin">Admin</button>
+                    <button class="role-btn btn2" data-role="Client">Client</button>
                 </div>
 
                 <div class="form-box">
                     <div class="inputbox">
-                        <span class="material-symbols-outlined">mail</span>
+                        <span class="material-symbols-outlined f-icon">mail</span>
                         <input type="email" placeholder="Enter Your Email" id="log-email">
                     </div>
                     <p></p>
                 </div>
 
                 <div class="form-box">
-                    <div class="password">
-                        <span class="material-symbols-outlined">lock</span>
+                    <div class="inputbox">
+                        <span class="material-symbols-outlined f-icon">lock</span>
                         <input type="password" placeholder="Enter Your Password" id="log-pass">
-                        <span class="material-symbols-outlined">visibility</span>
+                        <span class="material-symbols-outlined passeye">visibility_off</span>
                     </div>
                     <p></p>
                 </div>
 
-                <a href="">forget Password?</a>
+                <a href="404.html" class="forget">forget Password?</a>
 
-                <button class="log-btn">Submit</button>
+                <button class="log-btn">Submit<span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span></button>
 
             </div>
 
             <div class="log-foot">
 
-                <p>Already Have an Account? <a href="">sign Up</a></p>
+                <p>Already Have an Account? <a href="sign.html">Sign Up</a></p>
 
                 <div class="or">
-                    Or Continue With
+                    <span>Or Continue With</span>
                 </div>
 
                 <div class="log-icons">
-                    <a href=""><i class="fa-brands fa-google"></i></a>
-                    <a href=""><i class="fa-brands fa-apple"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-google"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-apple"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
                 </div>
 
-                 <a href="" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to Home</a>
+                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to Home</a>
             </div>
 
         </div>
 
         <div class="right-page">
             <div class="logo-conatiner">
-                <a href=""><img src="./src/logo.webp" alt="company logo"></a>
+                <a href="" class="log-a"><img src="./src/logo.webp" alt="company logo"></a>
+                <h1>Welcome Back</h1>
+                <p>Login to manage investigations, monitor active cases, and securely access sensitive information.</p>
             </div>
         </div>
 
