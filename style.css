@@ -188,7 +188,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+
     padding-left: 20px;
     white-space: nowrap;
 
@@ -202,15 +202,20 @@ body {
     border-left: 1px solid rgba(252, 239, 233, 0.61);
 }
 
-.nav-links a {
+.nav-links>a {
     text-decoration: none;
     font-size: 16px;
     color: white;
+    padding: 10px 20px;
     transition: .6s ease;
 }
 
 .nav-links a:hover {
-    color: var(--pcolor);
+    background: var(--pcolor);
+}
+
+.nav-links .active {
+    background: var(--pcolor);
 }
 
 .nav-sotial {
@@ -270,26 +275,23 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    .sid .sidelogo {
-        width: 160px;
+        margin-bottom: 10px;
     }
 
     .sidelogo img {
-        width: 160px;
+        width: 180px;
     }
 
-    .close-btn{
+    .close-btn {
         color: white;
         cursor: pointer;
         font-size: 22px;
         transition: .5s ease;
     }
 
-     .close-btn:hover{
+    .close-btn:hover {
         color: var(--pcolor);
-     }
+    }
 
     .nav-sotial-icons {
         border-left: none;
@@ -300,7 +302,7 @@ body {
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed;
         height: 100vh;
         max-width: 400px;
         width: 100%;
@@ -311,10 +313,19 @@ body {
         background: var(--dark);
         transition: .6s ease;
         transform: translateX(-100%);
+        gap: 15px;
     }
+
+    .nav-links>a {
+        padding: 12px 10px;
+        background: #ff553318;
+        border-left: 5px solid var(--pcolor);
+    }
+
 
     .nav-links.active {
         transform: translateX(0%);
+        
     }
 
     .menu-continer {
@@ -330,7 +341,7 @@ body {
         cursor: pointer;
     }
 
-    .menu-btn:hover{
+    .menu-btn:hover {
         color: var(--pcolor);
     }
 
@@ -353,12 +364,12 @@ body {
             font-size: 22px;
             color: white;
             transition: .5s ease;
-             cursor: pointer;
+            cursor: pointer;
         }
 
-          .log-icon span:hover{
+        .log-icon span:hover {
             color: var(--pcolor);
-          }
+        }
 
         .nav-sotial {
             display: none;
