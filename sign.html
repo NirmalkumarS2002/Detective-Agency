@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detective-Agency-Login Page</title>
+    <title>Detective-Agency-Sign UP Page</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
@@ -73,6 +73,7 @@
 
         .log-head {
             text-align: center;
+
         }
 
         .log-head h1 {
@@ -84,6 +85,10 @@
         .log-head p {
             font-size: 15px;
             color: white;
+            max-width: 350px;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
         .form {
@@ -93,6 +98,11 @@
             margin: 0 auto;
         }
 
+        .input-wraper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
 
         .role-btns {
             margin-bottom: 20px;
@@ -143,8 +153,9 @@
             box-shadow: 0px 0px 20px #ff55338e;
         }
 
+        
         .inputbox input:hover{
-                        box-shadow: 0px 0px 20px #ff55338e;
+            box-shadow: 0px 0px 20px #ff55338e;
         }
 
         .f-icon {
@@ -353,6 +364,10 @@
                 padding: 25px;
             }
 
+              .input-wraper{
+                grid-template-columns: 1fr;
+              }
+
             body {
                 padding: 15px;
             }
@@ -371,9 +386,10 @@
 
         @media (max-width:600px) {
 
-            .login-page{
+            .login-page {
                 padding: 16px;
             }
+
             .right-page {
                 min-height: 300px;
             }
@@ -386,7 +402,7 @@
                 font-size: 30px;
             }
 
-            .left-page{
+            .left-page {
                 padding: 10px;
             }
 
@@ -397,6 +413,15 @@
             .right-page p {
                 font-size: 13px;
             }
+
+            .log-head h1{
+                font-size: 30px;
+            }
+
+             .log-head p{
+                font-size: 14px;
+            }
+        
         }
     </style>
 </head>
@@ -408,8 +433,8 @@
         <div class="left-page">
 
             <div class="log-head">
-                <h1>Login Here</h1>
-                <p>Access your investigation dashboard securely.</p>
+                <h1>Create Account</h1>
+                <p>Register to securely access investigation services and confidential case updates.</p>
             </div>
 
             <div class="form">
@@ -419,21 +444,40 @@
                     <button class="role-btn btn2" data-role="Client">Client</button>
                 </div>
 
-                <div class="form-box">
-                    <div class="inputbox">
-                        <span class="material-symbols-outlined f-icon">mail</span>
-                        <input type="email" placeholder="Enter Your Email" id="log-email">
-                    </div>
-                    <p></p>
-                </div>
+                <div class="input-wraper">
+                    <div class="form-box">
+                        <div class="inputbox">
+                            <span class="material-symbols-outlined f-icon">person</span>
+                            <input type="text" placeholder="Enter Your Name" id="log-name">
 
-                <div class="form-box">
-                    <div class="inputbox">
-                        <span class="material-symbols-outlined f-icon">lock</span>
-                        <input type="password" placeholder="Enter Your Password" id="log-pass">
-                        <span class="material-symbols-outlined passeye">visibility_off</span>
+                        </div>
                     </div>
-                    <p></p>
+
+                    <div class="form-box">
+                        <div class="inputbox">
+                            <span class="material-symbols-outlined f-icon">mail</span>
+                            <input type="email" placeholder="Enter Your Email" id="log-email">
+                        </div>
+                        <p></p>
+                    </div>
+
+                    <div class="form-box">
+                        <div class="inputbox">
+                            <span class="material-symbols-outlined f-icon">lock</span>
+                            <input type="password" placeholder="Enter Your Password" id="log-pass">
+                            <span class="material-symbols-outlined passeye">visibility_off</span>
+                        </div>
+                        <p></p>
+                    </div>
+
+                    <div class="form-box">
+                        <div class="inputbox">
+                            <span class="material-symbols-outlined f-icon">lock</span>
+                            <input type="password" placeholder="Enter Your Password" id="log-conpass">
+                            <span class="material-symbols-outlined passeye">visibility_off</span>
+                        </div>
+                        <p></p>
+                    </div>
                 </div>
 
                 <a href="404.html" class="forget">forget Password?</a>
@@ -446,7 +490,7 @@
 
             <div class="log-foot">
 
-                <p>Already Have an Account? <a href="sign.html">Sign Up</a></p>
+                <p>Already Have an Account? <a href="login.html">Login</a></p>
 
                 <div class="or">
                     <span>Or Continue With</span>
@@ -458,7 +502,8 @@
                     <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
                 </div>
 
-                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to Home</a>
+                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to
+                    Home</a>
             </div>
 
         </div>
@@ -466,8 +511,8 @@
         <div class="right-page">
             <div class="logo-conatiner">
                 <a href="" class="log-a"><img src="./src/logo.webp" alt="company logo"></a>
-                <h1>Welcome Back</h1>
-                <p>Login to manage investigations, monitor active cases, and securely access sensitive information.</p>
+                <h1>Get Started</h1>
+                <p>Register to securely access investigations, manage cases, and receive confidential updates.</p>
             </div>
         </div>
 
