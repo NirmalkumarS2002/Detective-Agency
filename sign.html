@@ -153,9 +153,15 @@
             box-shadow: 0px 0px 20px #ff55338e;
         }
 
-        
-        .inputbox input:hover{
+
+        .inputbox input:hover {
             box-shadow: 0px 0px 20px #ff55338e;
+        }
+
+        .errormsg {
+            color: var(--pcolor);
+            margin-bottom: 10px;
+            font-size: 12px;
         }
 
         .f-icon {
@@ -364,9 +370,9 @@
                 padding: 25px;
             }
 
-              .input-wraper{
+            .input-wraper {
                 grid-template-columns: 1fr;
-              }
+            }
 
             body {
                 padding: 15px;
@@ -414,14 +420,14 @@
                 font-size: 13px;
             }
 
-            .log-head h1{
+            .log-head h1 {
                 font-size: 30px;
             }
 
-             .log-head p{
+            .log-head p {
                 font-size: 14px;
             }
-        
+
         }
     </style>
 </head>
@@ -430,9 +436,9 @@
 
     <section class="login-page">
 
-          <div class="right-page">
+        <div class="right-page">
             <div class="logo-conatiner">
-                <a href="" class="log-a">  <img src="./src/logo.webp" alt=""> </a>
+                <a href="" class="log-a"> <img src="./src/logo.webp" alt=""> </a>
                 <h1>Get Started</h1>
                 <p>Register to securely access investigations, manage cases, and receive confidential updates.</p>
             </div>
@@ -459,6 +465,7 @@
                             <input type="text" placeholder="Enter Your Name" id="log-name">
 
                         </div>
+                              <p class="errormsg"></p>
                     </div>
 
                     <div class="form-box">
@@ -466,7 +473,7 @@
                             <span class="material-symbols-outlined f-icon">mail</span>
                             <input type="email" placeholder="Enter Your Email" id="log-email">
                         </div>
-                        <p></p>
+                        <p class="errormsg"></p>
                     </div>
 
                     <div class="form-box">
@@ -475,7 +482,7 @@
                             <input type="password" placeholder="Enter Your Password" id="log-pass">
                             <span class="material-symbols-outlined passeye">visibility_off</span>
                         </div>
-                        <p></p>
+                        <p class="errormsg"></p>
                     </div>
 
                     <div class="form-box">
@@ -484,7 +491,7 @@
                             <input type="password" placeholder="Enter Your Password" id="log-conpass">
                             <span class="material-symbols-outlined passeye">visibility_off</span>
                         </div>
-                        <p></p>
+                        <p class="errormsg"></p>
                     </div>
                 </div>
 
@@ -516,9 +523,188 @@
 
         </div>
 
-      
+
 
     </section>
+    
+
+    <script>
+        const nameInput = document.querySelector("#log-name");
+const emailInput = document.querySelector("#log-email");
+const passwordInput = document.querySelector("#log-pass");
+const confirmPassword = document.querySelector("#log-conpass");
+
+const loginBtn = document.querySelector(".log-btn");
+
+const roleBtns = document.querySelectorAll(".role-btn");
+const eyeIcons = document.querySelectorAll(".passeye");
+
+const errorMsgs = document.querySelectorAll(".errormsg");
+
+let selectedRole = "Admin";
+
+//========================
+// Role Selection
+//========================
+
+roleBtns.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        roleBtns.forEach(item => item.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        selectedRole = btn.dataset.role;
+
+    });
+
+});
+
+//========================
+// Show / Hide Password
+//========================
+
+eyeIcons.forEach((eye,index)=>{
+
+    eye.addEventListener("click",()=>{
+
+        let input = index === 0 ? passwordInput : confirmPassword;
+
+        if(input.type === "password"){
+
+            input.type = "text";
+            eye.textContent = "visibility";
+
+        }else{
+
+            input.type = "password";
+            eye.textContent = "visibility_off";
+
+        }
+
+    });
+
+});
+
+//========================
+// Name Validation
+//========================
+
+// Only letters and spaces
+
+nameInput.addEventListener("input",()=>{
+
+    nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g,"");
+
+});
+
+//========================
+// Signup Validation
+//========================
+
+loginBtn.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    errorMsgs.forEach(msg=>msg.textContent="");
+
+    let valid = true;
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Name
+
+    if(nameInput.value.trim()==""){
+
+        errorMsgs[0].textContent="Name is required";
+
+        valid=false;
+
+    }
+    else if(!nameRegex.test(nameInput.value.trim())){
+
+        errorMsgs[0].textContent="Only letters are allowed";
+
+        valid=false;
+
+    }
+
+    // Email
+
+    if(emailInput.value.trim()==""){
+
+        errorMsgs[1].textContent="Email is required";
+
+        valid=false;
+
+    }
+    else if(!emailRegex.test(emailInput.value.trim())){
+
+        errorMsgs[1].textContent="Enter a valid email";
+
+        valid=false;
+
+    }
+
+    // Password
+
+    if(passwordInput.value.trim()==""){
+
+        errorMsgs[2].textContent="Password is required";
+
+        valid=false;
+
+    }
+    else if(passwordInput.value.length<6){
+
+        errorMsgs[2].textContent="Minimum 6 characters";
+
+        valid=false;
+
+    }
+
+    // Confirm Password
+
+    if(confirmPassword.value.trim()==""){
+
+        errorMsgs[3].textContent="Confirm your password";
+
+        valid=false;
+
+    }
+    else if(passwordInput.value!==confirmPassword.value){
+
+        errorMsgs[3].textContent="Passwords do not match";
+
+        valid=false;
+
+    }
+
+    if(valid){
+
+             alert(`${selectedRole} Account Created Successfully`);
+
+        window.location.href="login.html"
+
+  
+//
+       // if(selectedRole==="Admin"){
+//
+       //     window.location.href="admin-dashboard.html";
+//
+       // }else{
+//
+       //     window.location.href="client-dashboard.html";
+//
+       // }
+
+    }
+
+});
+    </script>
 </body>
 
 </html>

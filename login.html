@@ -135,7 +135,7 @@
             background: transparent;
             color: white;
             border-radius: 7px;
-
+            font-size: 14px;
         }
 
         .inputbox input:focus {
@@ -143,8 +143,8 @@
             box-shadow: 0px 0px 20px #ff55338e;
         }
 
-        .inputbox input:hover{
-                        box-shadow: 0px 0px 20px #ff55338e;
+        .inputbox input:hover {
+            box-shadow: 0px 0px 20px #ff55338e;
         }
 
         .f-icon {
@@ -164,6 +164,12 @@
             font-size: 20px;
             color: var(--pcolor);
             cursor: pointer;
+        }
+
+        .errormsg {
+            color: var(--pcolor);
+            margin-bottom: 10px;
+            font-size: 12px;
         }
 
         .forget {
@@ -371,9 +377,10 @@
 
         @media (max-width:600px) {
 
-            .login-page{
+            .login-page {
                 padding: 16px;
             }
+
             .right-page {
                 min-height: 300px;
             }
@@ -386,7 +393,7 @@
                 font-size: 30px;
             }
 
-            .left-page{
+            .left-page {
                 padding: 10px;
             }
 
@@ -424,7 +431,7 @@
                         <span class="material-symbols-outlined f-icon">mail</span>
                         <input type="email" placeholder="Enter Your Email" id="log-email">
                     </div>
-                    <p></p>
+                    <p class="errormsg"></p>
                 </div>
 
                 <div class="form-box">
@@ -433,7 +440,7 @@
                         <input type="password" placeholder="Enter Your Password" id="log-pass">
                         <span class="material-symbols-outlined passeye">visibility_off</span>
                     </div>
-                    <p></p>
+                    <p class="errormsg"></p>
                 </div>
 
                 <a href="404.html" class="forget">forget Password?</a>
@@ -458,7 +465,8 @@
                     <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
                 </div>
 
-                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to Home</a>
+                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to
+                    Home</a>
             </div>
 
         </div>
@@ -473,5 +481,110 @@
 
     </section>
 </body>
+
+<script>
+    const email = document.querySelector("#log-email");
+    const password = document.querySelector("#log-pass");
+    const loginBtn = document.querySelector(".log-btn");
+
+    const roleBtns = document.querySelectorAll(".role-btn");
+    const eyeIcon = document.querySelector(".passeye");
+    const errorMsgs = document.querySelectorAll(".errormsg");
+
+    let selectedRole = "Admin";
+
+    // Role Selection
+    roleBtns.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            roleBtns.forEach(item => item.classList.remove("active"));
+
+            btn.classList.add("active");
+
+            selectedRole = btn.dataset.role;
+
+        });
+
+    });
+
+    // Show / Hide Password
+    eyeIcon.addEventListener("click", () => {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+            eyeIcon.textContent = "visibility";
+
+        }
+        else {
+
+            password.type = "password";
+            eyeIcon.textContent = "visibility_off";
+
+        }
+
+    });
+
+    // Login Validation
+    loginBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        errorMsgs.forEach(msg => msg.textContent = "");
+
+        let valid = true;
+
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Email Validation
+        if (email.value.trim() === "") {
+
+            errorMsgs[0].textContent = "Email is required";
+            valid = false;
+
+        }
+        else if (!emailRegex.test(email.value.trim())) {
+
+            errorMsgs[0].textContent = "Enter a valid email";
+            valid = false;
+
+        }
+
+        // Password Validation
+        if (password.value.trim() === "") {
+
+            errorMsgs[1].textContent = "Password is required";
+            valid = false;
+
+        }
+        else if (password.value.length < 6) {
+
+            errorMsgs[1].textContent = "Minimum 6 characters required";
+            valid = false;
+
+        }
+
+        if (valid) {
+
+            alert(`${selectedRole} Login Successful`);
+
+            localStorage.setItem("useremail", email.value);
+
+            if (selectedRole === "Admin") {
+
+                window.location.href = "admin.html";
+
+            }
+            else {
+
+                window.location.href = "client.html";
+
+            }
+
+        }
+
+    });
+</script>
 
 </html>
