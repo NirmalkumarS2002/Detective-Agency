@@ -12,6 +12,10 @@ html {
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background: black;
+
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 :root {
@@ -194,9 +198,9 @@ body {
     display: none;
 }
 
- .nav-logo {
-        width: 160px;
-    }
+.nav-logo {
+    width: 160px;
+}
 
 .nav-links {
     display: flex;
@@ -255,23 +259,27 @@ body {
     display: none;
 }
 
-.side-logo-wraper{
+.side-logo-wraper {
     display: none;
     padding-right: 60px;
 }
 
-.header.active .side-logo-wraper{
+.header.active .side-logo-wraper {
     display: flex;
 }
 
 
- .sidelogo img {
-        width: 180px;
-    }
+.sidelogo img {
+    width: 180px;
+}
 
-    .close-btn{
-        display: none;
-    }
+.sidelogo:hover {
+    background: transparent !important;
+}
+
+.close-btn {
+    display: none;
+}
 
 @media (max-width:1100px) {
 
@@ -291,7 +299,7 @@ body {
         align-items: center;
     }
 
-   
+
 
     .side-logo-wraper {
         display: flex;
@@ -299,7 +307,7 @@ body {
         justify-content: space-between;
         margin-bottom: 10px;
         width: 100%;
-          padding-right: 0px;
+        padding-right: 0px;
     }
 
     .sidelogo img {
@@ -340,14 +348,14 @@ body {
         transform: translateX(-100%);
         gap: 15px;
         align-items: flex-start;
-      
+
     }
 
     .nav-links>a {
         padding: 12px 10px;
         background: #ff553318;
         border-left: 5px solid var(--pcolor);
-          width: 100%;
+        width: 100%;
     }
 
 
@@ -634,4 +642,55 @@ body {
     .footer-links {
         align-items: center;
     }
+}
+
+
+/* reaveal animation */
+
+.reveal,
+.reveal-right,
+.reveal-left {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal {
+    transform: translateY(60px);
+
+}
+
+.reveal-right {
+    transform: translateX(60px);
+}
+
+.reveal-left {
+    transform: translateX(-60px);
+}
+
+.delay-1 {
+    transition-delay: .2s !important;
+}
+
+.delay-2 {
+    transition-delay: .4s !important;
+}
+
+.delay-3 {
+    transition-delay: .6s !important;
+}
+
+.delay-4 {
+    transition-delay: .8s !important;
+}
+
+.delay-5 {
+    transition-delay: 1s !important;
+}
+
+
+.reveal.showed,
+.reveal-left.showed,
+.reveal-right.showed {
+    opacity: 1;
+    transform: translate(0, 0);
 }
