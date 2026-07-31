@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --pcolor: #ff5533;
+            --scolor: #FFFFFF;
+            --dark: black;
+        }
+
+        .err-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.82)),
+                url("./src/bg11.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .err-hero-content {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 180px 20px 100px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .err-text span.err-eyebrow {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .err-code {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(90px, 14vw, 150px);
+            line-height: 0.9;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .err-code::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            bottom: -14px;
+            width: 90px;
+            height: 4px;
+            background: var(--pcolor);
+        }
+
+        .err-text h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(26px, 3.2vw, 40px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            margin: 30px 0 18px 0;
+            line-height: 1.3;
+        }
+
+        .err-text p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 480px;
+        }
+
+        .err-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .err-btn {
+            padding: 15px 42px;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .5s ease;
+        }
+
+        .err-btn-primary {
+            background: var(--pcolor);
+            color: white;
+            border: none;
+        }
+
+        .err-btn-primary:hover {
+            box-shadow: 0px 0px 20px #ff55337c;
+        }
+
+        .err-btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .err-btn-outline:hover {
+            border-color: var(--pcolor);
+            color: var(--pcolor);
+        }
+
+        .err-btn span.material-symbols-outlined {
+            font-size: 20px;
+            transition: .5s ease;
+        }
+
+        .err-btn-primary:hover span,
+        .err-btn-outline:hover span {
+            transform: translateX(5px);
+        }
+
+        .err-search {
+            display: flex;
+            margin-top: 40px;
+            max-width: 480px;
+        }
+
+        .err-search input {
+            flex: 1;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-right: none;
+            color: white;
+            font-size: 15px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .err-search input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .err-search button {
+            padding: 0 26px;
+            background: var(--pcolor);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: .4s ease;
+        }
+
+        .err-search button:hover {
+            box-shadow: 0px 0px 20px #ff55337c;
+        }
+
+        .err-search button span {
+            font-size: 22px;
+        }
+
+        /* ---- image side ---- */
+        .err-img-wrap {
+            position: relative;
+            height: 480px;
+            justify-self: center;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .err-img-main {
+            width: 85%;
+            height: 88%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+
+        .err-img-sub {
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .err-tag {
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            background: var(--pcolor);
+            color: white;
+            padding: 16px 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .err-tag span.material-symbols-outlined {
+            font-size: 22px;
+        }
+
+        @media (max-width:1000px) {
+            .err-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 150px;
+            }
+
+             .err-code::after{
+                display: none;
+             }
+
+              .err-code{
+                margin-bottom: 0;
+              }
+
+            .err-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .err-btn-row,
+            .err-search {
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .err-img-wrap {
+                height: 380px;
+                order: -1;
+            }
+        }
+
+        @media (max-width:500px) {
+            .err-btn-row {
+                flex-direction: column;
+          
+                width: 100%;
+            }
+               .err-btn {
+                   justify-content: center;
+               }
+
+          /**  .err-search {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .err-search input {
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+            }**/
+
+            .err-search button {
+                padding: 14px;
+                justify-content: center;
+            }
+        }
+
+   
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ 1: 404 HERO ============ -->
+    <section class="err-hero">
+        <div class="err-hero-content">
+
+            <div class="err-text">
+                <span class="err-eyebrow">Case Not Found</span>
+                <h1 class="err-code">404</h1>
+
+                <h2>This Trail Has Gone Cold</h2>
+                <p>The page you're looking for has vanished without a trace. It may have been moved, renamed, or
+                    never existed in the first place. Let's get you back on the case.</p>
+
+                <div class="err-btn-row">
+                    <a href="index.html" class="err-btn err-btn-primary">Back To Home <span
+                            class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+                    <a href="contact.html" class="err-btn err-btn-outline">Contact Us <span
+                            class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+                </div>
+
+                <form class="err-search">
+                    <input type="text" placeholder="Search the site...">
+                    <button type="submit"><span class="material-symbols-outlined">search</span></button>
+                </form>
+            </div>
+
+            <div class="err-img-wrap">
+                <img class="err-img-main"
+                    src="./src/bg14.webp"
+                    alt="Detective examining evidence board">
+                <img class="err-img-sub"
+                    src="./src/bg12.webp"
+                    alt="Investigator reviewing case files">
+                <div class="err-tag"><span class="material-symbols-outlined">search</span>Investigating...</div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
