@@ -28,7 +28,7 @@
         }
 
         body {
-            background: var(--panel);
+            background: rgb(15, 15, 15);
             font-family: "Roboto Condensed", sans-serif;
             display: flex;
             gap: 0px;
@@ -172,7 +172,7 @@
         }
 
         .topbar {
-            background: #141414;
+            background: var(--dark);
             padding: 18px 25px;
             display: flex;
             justify-content: space-between;
@@ -318,11 +318,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 18px; 
+            margin-bottom: 18px;
 
         }
 
-        .panel-head h3{
+        .panel-head h3 {
             margin-bottom: 0px;
             line-height: 1.3;
         }
@@ -537,6 +537,7 @@
             width: 100%;
             height: 170px;
             object-fit: cover;
+            object-position: top;
             filter: grayscale(50%);
             transition: .5s ease;
         }
@@ -796,10 +797,10 @@
                     class="material-symbols-outlined">dashboard</span> Overview</button>
             <button onclick="showView('cases', this)"><span class="material-symbols-outlined">folder_open</span>
                 My Cases</button>
-            <button onclick="showView('reports', this)"><span
-                    class="material-symbols-outlined">summarize</span> Reports</button>
+            <button onclick="showView('reports', this)"><span class="material-symbols-outlined">summarize</span>
+                Reports</button>
             <button onclick="showView('messages', this)"><span class="material-symbols-outlined">chat</span>
-                Messages <span class="msg-count">3</span></button>
+                Messages <span class="msg-count">2</span></button>
             <button onclick="showView('billing', this)"><span class="material-symbols-outlined">receipt_long</span>
                 Billing</button>
             <button class="logoutbtn"><span class="material-symbols-outlined">logout</span>
@@ -807,7 +808,7 @@
         </nav>
 
         <div class="sidebar-footer">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+            <img src="./src/team9.webp"
                 alt="Client">
             <div>
                 <h4 id="username">Ramesh Iyer</h4>
@@ -832,7 +833,7 @@
                 </div>
                 <span class="material-symbols-outlined errorpage">notifications</span>
                 <div class="topbar-avatar"><img
-                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+                        src="./src/team9.webp"
                         alt="Client"></div>
             </div>
         </div>
@@ -914,7 +915,7 @@
                 <div class="panel">
                     <h3>Your Investigator</h3>
                     <div class="inv-profile">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"
+                        <img src="./src/person2.webp"
                             alt="Divya Krishnan">
                         <div>
                             <h4>Divya Krishnan</h4>
@@ -1061,35 +1062,35 @@
                 <h3>Case Reports & Documents</h3>
                 <div class="fleet-grid">
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=700&auto=format&fit=crop"
+                        <img src="./src/case1.webp"
                             alt="Surveillance report">
                         <div class="fleet-card-body">
                             <h4>Surveillance Report - #VG-4518</h4>
                             <p>Filed Jul 24, 2026 &middot; Priya Suresh</p>
-                            <button class="d-btn ghost errorpage"><span
-                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                            <button class="d-btn ghost errorpage"><span class="material-symbols-outlined"
+                                    style="background:none;width:auto;height:auto;">download</span>
                                 Download</button>
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=700&auto=format&fit=crop"
+                        <img src="./src/h3.webp"
                             alt="Background verification report">
                         <div class="fleet-card-body">
                             <h4>Verification Summary - #VG-4498</h4>
                             <p>Filed Jul 15, 2026 &middot; Divya Krishnan</p>
-                            <button class="d-btn ghost errorpage"><span
-                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                            <button class="d-btn ghost errorpage"><span class="material-symbols-outlined"
+                                    style="background:none;width:auto;height:auto;">download</span>
                                 Download</button>
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=700&auto=format&fit=crop"
+                        <img src="./src/case2.webp"
                             alt="Asset protection report">
                         <div class="fleet-card-body">
                             <h4>Risk Assessment - #VG-4471</h4>
                             <p>Filed Jun 02, 2026 &middot; Arjun Menon</p>
-                            <button class="d-btn ghost errorpage"><span
-                                    class="material-symbols-outlined" style="background:none;width:auto;height:auto;">download</span>
+                            <button class="d-btn ghost errorpage"><span class="material-symbols-outlined"
+                                    style="background:none;width:auto;height:auto;">download</span>
                                 Download</button>
                         </div>
                     </div>
@@ -1107,7 +1108,7 @@
 
                 <div class="msg-grid">
                     <div class="msg-item errorpage">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"
+                        <img src="./src/person1.webp"
                             alt="Divya Krishnan">
                         <div class="msg-item-body">
                             <h4>Divya Krishnan</h4>
@@ -1120,7 +1121,7 @@
                     </div>
 
                     <div class="msg-item errorpage">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                        <img src="./src/person2.webp"
                             alt="Priya Suresh">
                         <div class="msg-item-body">
                             <h4>Priya Suresh</h4>
@@ -1133,7 +1134,7 @@
                     </div>
 
                     <div class="msg-item errorpage">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                        <img src="./src/person3.webp"
                             alt="Arjun Menon">
                         <div class="msg-item-body">
                             <h4>Arjun Menon</h4>
@@ -1145,7 +1146,7 @@
                     </div>
 
                     <div class="msg-item errorpage">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                        <img src="./src/p3.webp"
                             alt="Vikram Nair">
                         <div class="msg-item-body">
                             <h4>Vikram Nair</h4>

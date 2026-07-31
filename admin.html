@@ -28,7 +28,7 @@
         }
 
         body {
-            background: var(--panel);
+            background: rgb(15, 15, 15);
             font-family: "Roboto Condensed", sans-serif;
             display: flex;
             gap: 0px;
@@ -158,12 +158,11 @@
         }
 
         .topbar {
-            background: #141414;
+            background: var(--dark);
             padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #232323;
         }
 
         .topbarimgcontainer {
@@ -301,9 +300,9 @@
 
         }
 
-           .panel-head h3{
+        .panel-head h3 {
             margin-bottom: 0;
-           }
+        }
 
 
         /* stat cards */
@@ -467,8 +466,9 @@
 
         .fleet-card img {
             width: 100%;
-            height: 190px;
+            height: 250px;
             object-fit: cover;
+            object-position: top;
             filter: grayscale(50%);
             transition: .5s ease;
         }
@@ -696,8 +696,8 @@
                     class="material-symbols-outlined">dashboard</span> Overview</button>
             <button onclick="showView('cases', this)"><span class="material-symbols-outlined">folder_open</span>
                 Cases</button>
-            <button onclick="showView('investigators', this)"><span
-                    class="material-symbols-outlined">badge</span> Investigators</button>
+            <button onclick="showView('investigators', this)"><span class="material-symbols-outlined">badge</span>
+                Investigators</button>
             <button onclick="showView('branches', this)"><span class="material-symbols-outlined">business</span>
                 Branches</button>
 
@@ -708,8 +708,7 @@
         </nav>
 
         <div class="sidebar-footer">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
-                alt="Admin">
+            <img src="./src/Team7.webp" alt="Admin">
             <div>
                 <h4 id="username">Arjun Menon</h4>
                 <span>Lead Investigator</span>
@@ -732,9 +731,7 @@
                     <input type="text" placeholder="Search cases, clients...">
                 </div>
                 <span class="material-symbols-outlined errorpage">notifications</span>
-                <div class="topbar-avatar"><img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
-                        alt="Admin"></div>
+                <div class="topbar-avatar"><img src="./src/Team7.webp" alt="Admin"></div>
             </div>
         </div>
 
@@ -981,8 +978,8 @@
             <div class="panel">
                 <h3>Investigator Roster</h3>
                 <div class="fleet-grid">
-                    <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop"
+                    <!-- <div class="fleet-card">
+                        <img src="./src/Team1.webp"
                             alt="Arjun Menon">
                         <div class="fleet-card-body">
                             <h4>Arjun Menon</h4>
@@ -991,7 +988,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop"
+                        <img src="./src/Team2.webp"
                             alt="Divya Krishnan">
                         <div class="fleet-card-body">
                             <h4>Divya Krishnan</h4>
@@ -1000,17 +997,16 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=700&auto=format&fit=crop"
+                        <img src="./src/Team7.webp"
                             alt="Karthik Raja">
                         <div class="fleet-card-body">
                             <h4>Karthik Raja</h4>
                             <p>Cyber Forensics - 11 Active Cases</p>
                             <span class="badge maintenance">On Leave</span>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop"
-                            alt="Priya Suresh">
+                        <img src="./src/Team8.webp" alt="Priya Suresh">
                         <div class="fleet-card-body">
                             <h4>Priya Suresh</h4>
                             <p>Field Surveillance - 20 Active Cases</p>
@@ -1018,8 +1014,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop"
-                            alt="Vikram Nair">
+                        <img src="./src/Team9.webp" alt="Vikram Nair">
                         <div class="fleet-card-body">
                             <h4>Vikram Nair</h4>
                             <p>Legal Support - 9 Active Cases</p>
@@ -1027,8 +1022,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=700&auto=format&fit=crop"
-                            alt="Meera Pillai">
+                        <img src="./src/Team10.webp" alt="Meera Pillai">
                         <div class="fleet-card-body">
                             <h4>Meera Pillai</h4>
                             <p>Background Verification - 15 Active Cases</p>
@@ -1068,19 +1062,19 @@
                 <h3>Branch Offices</h3>
                 <div class="wh-grid">
                     <div class="wh-card">
-                        <img src="./src/s1.webp" alt="Chennai head office">
+                        <img src="./src/con1.webp" alt="Chennai head office">
                         <div class="overlay">
                             <h4>Chennai HQ</h4><span>Caseload 92%</span>
                         </div>
                     </div>
                     <div class="wh-card">
-                        <img src="./src/s2.webp" alt="Mumbai branch office">
+                        <img src="./src/con2.webp" alt="Mumbai branch office">
                         <div class="overlay">
                             <h4>Mumbai Branch</h4><span>Caseload 78%</span>
                         </div>
                     </div>
                     <div class="wh-card">
-                        <img src="./src/bg2.webp" alt="Bangalore branch office">
+                        <img src="./src/con3.webp" alt="Bangalore branch office">
                         <div class="overlay">
                             <h4>Bangalore Branch</h4><span>Caseload 65%</span>
                         </div>
