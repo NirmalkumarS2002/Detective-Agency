@@ -86,7 +86,7 @@
 
     .sv-banner-content h1 {
         font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(50px, 8vw, 80px);
+        font-size: clamp(35px, 8vw, 80px);
         text-transform: uppercase;
         color: white;
         font-weight: 400;
@@ -261,6 +261,9 @@
     .sv-list-body {
         padding: 30px 28px;
         position: relative;
+
+        display: flex;
+        flex-direction: column;
     }
 
     .sv-list-icon {
@@ -294,6 +297,7 @@
         font-size: 14px;
         line-height: 1.6;
         margin-bottom: 20px;
+        flex: 1;
     }
 
     .sv-readmore {
@@ -429,6 +433,10 @@
         padding: 45px 35px;
         text-align: center;
         transition: .5s ease;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .sv-price-card.sv-featured {
@@ -472,6 +480,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
         gap: 14px;
         margin-bottom: 30px;
         text-align: left;
@@ -519,11 +528,17 @@
 
     @media (max-width:1000px) {
         .sv-pricing-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
         }
 
         .sv-price-card.sv-featured {
             transform: none;
+        }
+    }
+
+    @media (max-width:700px) {
+        .sv-pricing-grid{
+            grid-template-columns: 1fr;
         }
     }
 
@@ -879,7 +894,7 @@
                 <li><span class="material-symbols-outlined">check</span>Single Investigator</li>
                 <li><span class="material-symbols-outlined">check</span>Summary Report</li>
             </ul>
-            <a href="contact.html" class="sv-price-btn">Get Started</a>
+            <a href="404.html" class="sv-price-btn">Get Started</a>
         </div>
 
         <div class="sv-price-card sv-featured">
@@ -890,7 +905,7 @@
                 <li><span class="material-symbols-outlined">check</span>Two-Agent Field Team</li>
                 <li><span class="material-symbols-outlined">check</span>Detailed Evidence Report</li>
             </ul>
-            <a href="contact.html" class="sv-price-btn">Get Started</a>
+            <a href="404.html" class="sv-price-btn">Get Started</a>
         </div>
 
         <div class="sv-price-card">
@@ -901,7 +916,7 @@
                 <li><span class="material-symbols-outlined">check</span>Dedicated Case Manager</li>
                 <li><span class="material-symbols-outlined">check</span>Court-Admissible Documentation</li>
             </ul>
-            <a href="contact.html" class="sv-price-btn">Get Started</a>
+            <a href="404.html" class="sv-price-btn">Get Started</a>
         </div>
     </div>
 </section>

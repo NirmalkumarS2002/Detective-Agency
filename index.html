@@ -19,11 +19,9 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
+        /*hero-section*/
 
-
-    /*hero-section*/
-
-       .hero-section {
+        .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -279,9 +277,9 @@
 
         @media (max-width:750px) {
 
-             .h-section-content{
+            .h-section-content {
                 padding-top: 150px;
-             }
+            }
 
             .h-sub-title {
                 font-size: 40px;
@@ -350,658 +348,678 @@
                 font-size: 20px;
             }
         }
-    /* ============ shared section styles ============ */
-    .sec-title-wrap {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 60px auto;
-    }
 
-    .sec-eyebrow {
-        color: var(--pcolor);
-        font-size: 15px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        display: block;
-    }
+        /* ============ shared section styles ============ */
+        .sec-title-wrap {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
 
-    .sec-title {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(32px, 4vw, 52px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
+        .sec-eyebrow {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
 
-    .sec-desc {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.6;
-    }
+        .sec-title {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(32px, 4vw, 52px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
 
-    .container-xl {
-        max-width: 1400px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 100px 20px;
-    }
+        .sec-desc {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-    /* ===================================================
+        .container-xl {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        /* ===================================================
        SECTION 1 — ABOUT
     =================================================== */
-    .about-section {
-        background: var(--dark);
-    }
+        .about-section {
+            background: var(--dark);
+        }
 
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px;
-    }
-
-    .about-img-wrap {
-        position: relative;
-        height: 500px;
-    }
-
-    .about-img-main {
-        width: 80%;
-        height: 85%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 6px solid var(--dark);
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
-    }
-
-    .about-img-sub {
-        width: 55%;
-        height: 55%;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border: 6px solid var(--dark);
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .about-badge {
-        position: absolute;
-        top: 20px;
-        right: 10%;
-        background: var(--pcolor);
-        color: white;
-        padding: 20px;
-        width: 130px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.3;
-        text-transform: uppercase;
-    }
-
-    .about-badge strong {
-        display: block;
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 34px;
-    }
-
-    .about-content span.sec-eyebrow {
-        text-align: left;
-    }
-
-    .about-content h2 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(30px, 4vw, 46px);
-        color: white;
-        text-transform: uppercase;
-        font-weight: 400;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .about-content p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 25px;
-    }
-
-    .about-points {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        margin-bottom: 30px;
-    }
-
-    .about-points div {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        color: white;
-        font-size: 16px;
-    }
-
-    .about-points span {
-        color: var(--pcolor);
-        font-size: 22px;
-    }
-
-    @media (max-width:900px) {
         .about-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 20px;
         }
 
         .about-img-wrap {
-            height: 420px;
+            position: relative;
+            height: 500px;
         }
-    }
 
-    /* ===================================================
+        .about-img-main {
+            width: 80%;
+            height: 85%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+
+        .about-img-sub {
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 6px solid var(--dark);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .about-badge {
+            position: absolute;
+            top: 20px;
+            right: 10%;
+            background: var(--pcolor);
+            color: white;
+            padding: 20px;
+            width: 130px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .about-badge strong {
+            display: block;
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 34px;
+        }
+
+        .about-content span.sec-eyebrow {
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            color: white;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .about-points {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .about-points div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .about-points span {
+            color: var(--pcolor);
+            font-size: 22px;
+        }
+
+        @media (max-width:900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img-wrap {
+                height: 420px;
+            }
+        }
+
+        /* ===================================================
        SECTION 2 — SERVICES
     =================================================== */
-    .services-section {
-        background: #0c0c0c;
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .service-card {
-        background: #141414;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 40px 30px;
-        transition: .5s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .service-card:hover {
-        background: var(--pcolor);
-        transform: translateY(-8px);
-    }
-
-    .service-card span.material-symbols-outlined {
-        font-size: 40px;
-        color: var(--pcolor);
-        margin-bottom: 25px;
-        display: block;
-        transition: .5s ease;
-    }
-
-    .service-card:hover span.material-symbols-outlined {
-        color: white;
-    }
-
-    .service-card h3 {
-        font-size: 20px;
-        text-transform: uppercase;
-        color: white;
-        margin-bottom: 12px;
-        font-weight: 500;
-    }
-
-    .service-card p {
-        font-size: 15px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.6);
-        transition: .5s ease;
-    }
-
-    .service-card:hover p {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    @media (max-width:1100px) {
-        .services-grid {
-            grid-template-columns: 1fr 1fr;
+        .services-section {
+            background: #0c0c0c;
         }
-    }
 
-    @media (max-width:550px) {
         .services-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .service-card {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 30px;
+            transition: .5s ease;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            background: var(--pcolor);
+            transform: translateY(-8px);
+        }
+
+        .service-card span.material-symbols-outlined {
+            font-size: 40px;
+            color: var(--pcolor);
+            margin-bottom: 25px;
+            display: block;
+            transition: .5s ease;
+        }
+
+        .service-card:hover span.material-symbols-outlined {
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 12px;
+            font-weight: 500;
+            min-height: 45px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            transition: .5s ease;
+        }
+
+        .service-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width:1100px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:550px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card h3 {
+                min-height: 0px;
+            }
+        }
+
+        /* ===================================================
        SECTION 3 — WHY CHOOSE US (stats + image)
     =================================================== */
-    .why-section {
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.82)),
-            url("./src/bg11.webp");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .why-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px;
-        align-items: center;
-    }
-
-    .why-content span.sec-eyebrow {
-        text-align: left;
-    }
-
-    .why-content h2 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(30px, 4vw, 46px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .why-content p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 30px;
-    }
-
-    .stats-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-    }
-
-    .stat-box {
-        border-left: 3px solid var(--pcolor);
-        padding-left: 20px;
-    }
-
-    .stat-box strong {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 48px;
-        color: white;
-        display: block;
-    }
-
-    .stat-box span {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    @media (max-width:900px) {
-        .why-grid {
-            grid-template-columns: 1fr;
+        .why-section {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.82)),
+                url("./src/bg11.webp");
+            background-size: cover;
+            background-position: center;
         }
-    }
 
-    /* ===================================================
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            align-items: center;
+        }
+
+        .why-content span.sec-eyebrow {
+            text-align: left;
+        }
+
+        .why-content h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .why-content p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .stat-box {
+            border-left: 3px solid var(--pcolor);
+            padding-left: 20px;
+        }
+
+        .stat-box strong {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 48px;
+            color: white;
+            display: block;
+        }
+
+        .stat-box span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-wrap: nowrap;
+        }
+
+        @media (max-width:900px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box strong {
+                font-size: 35px;
+            }
+
+              .stat-box span{
+                font-size: 13px;
+              }
+        }
+
+        /* ===================================================
        SECTION 4 — HOW WE WORK (process)
     =================================================== */
-    .process-section {
-        background: var(--dark);
-    }
-
-    .process-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .process-card {
-        text-align: center;
-        padding: 40px 25px;
-        position: relative;
-    }
-
-    .process-num {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: 60px;
-        color: rgba(255, 255, 255, 0.08);
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .process-card span.material-symbols-outlined {
-        font-size: 36px;
-        color: var(--pcolor);
-        margin-bottom: 20px;
-        display: inline-block;
-        position: relative;
-    }
-
-    .process-card h3 {
-        color: white;
-        text-transform: uppercase;
-        font-size: 18px;
-        margin-bottom: 12px;
-        position: relative;
-    }
-
-    .process-card p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14px;
-        line-height: 1.6;
-        position: relative;
-    }
-
-    @media (max-width:1000px) {
-        .process-grid {
-            grid-template-columns: 1fr 1fr;
+        .process-section {
+            background: var(--dark);
         }
-    }
 
-    @media (max-width:550px) {
         .process-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .process-card {
+            text-align: center;
+            padding: 40px 25px;
+            position: relative;
+        }
+
+        .process-num {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.08);
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .process-card span.material-symbols-outlined {
+            font-size: 36px;
+            color: var(--pcolor);
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .process-card h3 {
+            color: white;
+            text-transform: uppercase;
+            font-size: 18px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .process-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        @media (max-width:1000px) {
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:550px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        SECTION 5 — CASE STUDIES
     =================================================== */
-    .cases-section {
-        background: #0c0c0c;
-    }
-
-    .cases-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .case-card {
-        position: relative;
-        height: 420px;
-        overflow: hidden;
-    }
-
-    .case-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .6s ease;
-    }
-
-    .case-card:hover img {
-        transform: scale(1.1);
-    }
-
-    .case-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 70%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 30px;
-    }
-
-    .case-overlay span {
-        color: var(--pcolor);
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 8px;
-    }
-
-    .case-overlay h3 {
-        color: white;
-        font-size: 22px;
-        text-transform: uppercase;
-        font-weight: 500;
-    }
-
-    @media (max-width:1000px) {
-        .cases-grid {
-            grid-template-columns: 1fr 1fr;
+        .cases-section {
+            background: #0c0c0c;
         }
-    }
 
-    @media (max-width:650px) {
         .cases-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .case-card {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .case-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .case-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+        }
+
+        .case-overlay span {
+            color: var(--pcolor);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .case-overlay h3 {
+            color: white;
+            font-size: 22px;
+            text-transform: uppercase;
+            font-weight: 500;
+            min-height: 60px;
+
+        }
+
+        @media (max-width:1000px) {
+            .cases-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:650px) {
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        SECTION 6 — MEET OUR DETECTIVES (team)
     =================================================== */
-    .team-section {
-        background: var(--dark);
-    }
-
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .team-card {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .team-img {
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-        filter: grayscale(60%);
-        object-position: top;
-        transition: .5s ease;
-    }
-
-    .team-card:hover .team-img {
-        filter: grayscale(0%);
-        transform: scale(1.05);
-    }
-
-    .team-info {
-        background: #141414;
-        padding: 20px;
-        text-align: center;
-        border-bottom: 3px solid var(--pcolor);
-    }
-
-    .team-info h3 {
-        color: white;
-        font-size: 18px;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-    }
-
-    .team-info p {
-        color: var(--pcolor);
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    @media (max-width:1000px) {
-        .team-grid {
-            grid-template-columns: 1fr 1fr;
+        .team-section {
+            background: var(--dark);
         }
-    }
 
-    @media (max-width:550px) {
         .team-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-    }
 
-    /* ===================================================
+        .team-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            filter: grayscale(60%);
+            object-position: top;
+            transition: .5s ease;
+        }
+
+        .team-card:hover .team-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            background: #141414;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--pcolor);
+        }
+
+        .team-info h3 {
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .team-info p {
+            color: var(--pcolor);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width:1000px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:550px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        SECTION 7 — TESTIMONIALS
     =================================================== */
-    .testimonial-section {
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
-            url("./src/image_2.webp");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px 100px 20px;
-    }
-
-    .testimonial-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 40px 30px;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .testimonial-card span.material-symbols-outlined {
-        font-size: 34px;
-        color: var(--pcolor);
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    .testimonial-card p {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 15px;
-        line-height: 1.7;
-        flex: 1;
-        margin-bottom: 25px;
-    }
-
-    .testimonial-person {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .testimonial-person img {
-        width: 55px;
-        height: 55px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .testimonial-person h4 {
-        color: white;
-        font-size: 16px;
-        margin-bottom: 3px;
-    }
-
-    .testimonial-person span.role {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 13px;
-    }
-
-    @media (max-width:1000px) {
-        .testimonial-grid {
-            grid-template-columns: 1fr;
+        .testimonial-section {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+                url("./src/image_2.webp");
+            background-size: cover;
+            background-position: center;
         }
-    }
 
-    /* ===================================================
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card span.material-symbols-outlined {
+            font-size: 34px;
+            color: var(--pcolor);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .testimonial-card p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 15px;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-person {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-person img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .testimonial-person h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-person span.role {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+        }
+
+        @media (max-width:1000px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================================================
        SECTION 8 — CTA / CONTACT BANNER
     =================================================== */
-    .cta-section {
-        background: var(--pcolor);
-    }
+        .cta-section {
+            background: var(--pcolor);
+        }
 
-    .cta-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 30px;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 80px 20px;
-    }
-
-    .cta-grid h2 {
-        font-family: "Tenor Sans", sans-serif;
-        font-size: clamp(28px, 4vw, 44px);
-        text-transform: uppercase;
-        color: white;
-        font-weight: 400;
-        line-height: 1.25;
-        margin-bottom: 12px;
-    }
-
-    .cta-grid p {
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 16px;
-    }
-
-    .cta-btn-wrap {
-        display: flex;
-        justify-content: flex-end;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .cta-btn {
-        padding: 16px 40px;
-        background: var(--dark);
-        color: white;
-        border: none;
-        font-size: 15px;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: .5s ease;
-        text-decoration: none;
-    }
-
-    .cta-btn:hover {
-        background: white;
-        color: var(--pcolor);
-    }
-
-    @media (max-width:800px) {
         .cta-grid {
-            grid-template-columns: 1fr;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .cta-grid h2 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(28px, 4vw, 44px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .cta-grid p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
         }
 
         .cta-btn-wrap {
-            justify-content: center;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-    }
-</style>
+
+        .cta-btn {
+            padding: 16px 40px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            font-size: 15px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .5s ease;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            color: var(--pcolor);
+        }
+
+        @media (max-width:800px) {
+            .cta-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-btn-wrap {
+                justify-content: center;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
 
-        <header class="header">
+    <header class="header">
 
         <div class="head1">
             <div class="logo-container">
@@ -1096,17 +1114,17 @@
 
 
                     <div class="h-cases">
-                        <div class="h-case-icon">
+                        <div class="h-case-icon errorpage">
                             <span class="material-symbols-outlined errorpage">gavel</span>
                             <p>Active Case</p>
                         </div>
 
-                        <div class="h-case-icon">
+                        <div class="h-case-icon errorpage">
                             <span class="material-symbols-outlined errorpage">verified_user</span>
                             <p>100% Confidential</p>
                         </div>
 
-                        <div class="h-case-icon">
+                        <div class="h-case-icon errorpage">
                             <span class="material-symbols-outlined errorpage">schedule</span>
                             <p>24/7 Support</p>
                         </div>
@@ -1143,345 +1161,326 @@
 
     </section>
 
-<!-- ============ SECTION 1: ABOUT ============ -->
-<section class="about-section">
-    <div class="about-grid">
-        <div class="about-img-wrap">
-            <img class="about-img-main"
-                src="./src/h3.webp"
-                alt="Private investigator reviewing case files">
-            <img class="about-img-sub"
-                src="./src/image-7.webp"
-                alt="Detective examining evidence board">
-            <div class="about-badge"><strong>18+</strong>Years of Experience</div>
-        </div>
-
-        <div class="about-content">
-            <span class="sec-eyebrow">Who We Are</span>
-            <h2>Discreet Investigations, Verified Truths</h2>
-            <p>Vestigae Detective Agency has spent nearly two decades uncovering facts hidden in plain sight.
-                Our licensed investigators combine field surveillance, digital forensics, and old-fashioned
-                legwork to give clients answers they can act on.</p>
-
-            <div class="about-points">
-                <div><span class="material-symbols-outlined">check_circle</span> Licensed & Insured Investigators
-                </div>
-                <div><span class="material-symbols-outlined">check_circle</span> Court-Admissible Evidence Reports
-                </div>
-                <div><span class="material-symbols-outlined">check_circle</span> Strict Client Confidentiality</div>
+    <!-- ============ SECTION 1: ABOUT ============ -->
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-img-wrap">
+                <img class="about-img-main" src="./src/h3.webp" alt="Private investigator reviewing case files">
+                <img class="about-img-sub" src="./src/image-7.webp" alt="Detective examining evidence board">
+                <div class="about-badge"><strong>18+</strong>Years of Experience</div>
             </div>
 
-            <button class="her-btns">More About Us <span
-                    class="material-symbols-outlined">keyboard_double_arrow_right</span></button>
-        </div>
-    </div>
-</section>
+            <div class="about-content">
+                <span class="sec-eyebrow">Who We Are</span>
+                <h2>Discreet Investigations, Verified Truths</h2>
+                <p>Vestigae Detective Agency has spent nearly two decades uncovering facts hidden in plain sight.
+                    Our licensed investigators combine field surveillance, digital forensics, and old-fashioned
+                    legwork to give clients answers they can act on.</p>
 
-<!-- ============ SECTION 2: SERVICES ============ -->
-<section class="services-section">
-    <div class="container-xl" style="padding-bottom:0;">
-        <div class="sec-title-wrap">
-            <span class="sec-eyebrow">What We Do</span>
-            <h2 class="sec-title">Our Investigation Services</h2>
-            <p class="sec-desc">From corporate due-diligence to personal matters, our team handles every case
-                with precision and discretion.</p>
-        </div>
-    </div>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <span class="material-symbols-outlined">visibility</span>
-            <h3>Surveillance</h3>
-            <p>Covert monitoring for infidelity, insurance fraud, and behavioral verification cases.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">domain</span>
-            <h3>Corporate Investigation</h3>
-            <p>Due diligence, employee misconduct, and internal fraud investigations for businesses.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">fingerprint</span>
-            <h3>Background Verification</h3>
-            <p>Comprehensive checks on individuals for hiring, tenancy, and pre-marital screening.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">lan</span>
-            <h3>Cyber Investigation</h3>
-            <p>Digital footprint tracing, online fraud detection, and data recovery services.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">family_restroom</span>
-            <h3>Family & Marital Cases</h3>
-            <p>Sensitive, confidential handling of custody disputes and matrimonial investigations.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">gavel</span>
-            <h3>Legal Support</h3>
-            <p>Evidence gathering and witness location to support ongoing litigation.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">location_searching</span>
-            <h3>Missing Persons</h3>
-            <p>Skip tracing and locating missing family members or individuals of interest.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="material-symbols-outlined">security</span>
-            <h3>Asset Protection</h3>
-            <p>Risk assessments and protective intelligence for high-value individuals and assets.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============ SECTION 3: WHY CHOOSE US ============ -->
-<section class="why-section">
-    <div class="why-grid">
-        <div class="why-content">
-            <span class="sec-eyebrow">Why Choose Vestigae</span>
-            <h2>Proven Results, Absolute Discretion</h2>
-            <p>Every case is assigned to a dedicated investigator who reports directly to you. No
-                subcontracting, no shortcuts — just meticulous work backed by a track record clients trust.</p>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <strong>1,200+</strong>
-                    <span>Cases Solved</span>
+                <div class="about-points">
+                    <div><span class="material-symbols-outlined">check_circle</span> Licensed & Insured Investigators
+                    </div>
+                    <div><span class="material-symbols-outlined">check_circle</span> Court-Admissible Evidence Reports
+                    </div>
+                    <div><span class="material-symbols-outlined">check_circle</span> Strict Client Confidentiality</div>
                 </div>
-                <div class="stat-box">
-                    <strong>97%</strong>
-                    <span>Success Rate</span>
-                </div>
-                <div class="stat-box">
-                    <strong>24/7</strong>
-                    <span>Availability</span>
-                </div>
-                <div class="stat-box">
-                    <strong>18</strong>
-                    <span>Years in Field</span>
+
+                <button class="her-btns errorpage">More About Us <span
+                        class="material-symbols-outlined">keyboard_double_arrow_right</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 2: SERVICES ============ -->
+    <section class="services-section">
+        <div class="container-xl" style="padding-bottom:0;">
+            <div class="sec-title-wrap">
+                <span class="sec-eyebrow">What We Do</span>
+                <h2 class="sec-title">Our Investigation Services</h2>
+                <p class="sec-desc">From corporate due-diligence to personal matters, our team handles every case
+                    with precision and discretion.</p>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="material-symbols-outlined">visibility</span>
+                <h3>Surveillance</h3>
+                <p>Covert monitoring for infidelity, insurance fraud, and behavioral verification cases.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">domain</span>
+                <h3>Corporate Investigation</h3>
+                <p>Due diligence, employee misconduct, and internal fraud investigations for businesses.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">fingerprint</span>
+                <h3>Background Verification</h3>
+                <p>Comprehensive checks on individuals for hiring, tenancy, and pre-marital screening.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">lan</span>
+                <h3>Cyber Investigation</h3>
+                <p>Digital footprint tracing, online fraud detection, and data recovery services.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">family_restroom</span>
+                <h3>Family & Marital Cases</h3>
+                <p>Sensitive, confidential handling of custody disputes and matrimonial investigations.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">gavel</span>
+                <h3>Legal Support</h3>
+                <p>Evidence gathering and witness location to support ongoing litigation.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">location_searching</span>
+                <h3>Missing Persons</h3>
+                <p>Skip tracing and locating missing family members or individuals of interest.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-symbols-outlined">security</span>
+                <h3>Asset Protection</h3>
+                <p>Risk assessments and protective intelligence for high-value individuals and assets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 3: WHY CHOOSE US ============ -->
+    <section class="why-section">
+        <div class="why-grid">
+            <div class="why-content">
+                <span class="sec-eyebrow">Why Choose Vestigae</span>
+                <h2>Proven Results, Absolute Discretion</h2>
+                <p>Every case is assigned to a dedicated investigator who reports directly to you. No
+                    subcontracting, no shortcuts — just meticulous work backed by a track record clients trust.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <strong>1,200+</strong>
+                        <span>Cases Solved</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>97%</strong>
+                        <span>Success Rate</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>24/7</strong>
+                        <span>Availability</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>18</strong>
+                        <span>Years in Field</span>
+                    </div>
                 </div>
             </div>
+
+            <div>
+                <img src="./src/image_1.webp" alt="Investigator analyzing surveillance footage"
+                    style="width:100%; height:500px; object-fit:cover; border:6px solid var(--dark);">
+            </div>
+
+
         </div>
+    </section>
 
-        <div>
-            <img src="./src/image_1.webp"
-                alt="Investigator analyzing surveillance footage"
-                style="width:100%; height:500px; object-fit:cover; border:6px solid var(--dark);">
-        </div>
-
-       
-    </div>
-</section>
-
-<!-- ============ SECTION 4: HOW WE WORK ============ -->
-<section class="process-section">
-    <div class="container-xl" style="padding-bottom:0;">
-        <div class="sec-title-wrap">
-            <span class="sec-eyebrow">Our Process</span>
-            <h2 class="sec-title">How We Work</h2>
-            <p class="sec-desc">A clear, structured process from your first call to case closure.</p>
-        </div>
-    </div>
-
-    <div class="process-grid">
-        <div class="process-card">
-            <span class="process-num">01</span>
-            <span class="material-symbols-outlined">chat</span>
-            <h3>Consultation</h3>
-            <p>We discuss your situation confidentially and outline possible approaches.</p>
-        </div>
-
-        <div class="process-card">
-            <span class="process-num">02</span>
-            <span class="material-symbols-outlined">fact_check</span>
-            <h3>Case Planning</h3>
-            <p>Our team designs an investigation strategy tailored to your case.</p>
-        </div>
-
-        <div class="process-card">
-            <span class="process-num">03</span>
-            <span class="material-symbols-outlined">search</span>
-            <h3>Investigation</h3>
-            <p>Field agents and analysts gather verified evidence discreetly.</p>
-        </div>
-
-        <div class="process-card">
-            <span class="process-num">04</span>
-            <span class="material-symbols-outlined">summarize</span>
-            <h3>Detailed Report</h3>
-            <p>You receive a complete, court-ready report with findings and proof.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============ SECTION 5: CASE STUDIES ============ -->
-<section class="cases-section">
-    <div class="container-xl" style="padding-bottom:0;">
-        <div class="sec-title-wrap">
-            <span class="sec-eyebrow">Our Track Record</span>
-            <h2 class="sec-title">Recent Case Studies</h2>
-            <p class="sec-desc">A look at the kinds of cases our agency has closed successfully.</p>
-        </div>
-    </div>
-
-    <div class="cases-grid">
-        <div class="case-card">
-            <img src="./src/image-9.webp"
-                alt="Corporate fraud case investigation">
-            <div class="case-overlay">
-                <span>Corporate</span>
-                <h3>Internal Fraud Exposed</h3>
+    <!-- ============ SECTION 4: HOW WE WORK ============ -->
+    <section class="process-section">
+        <div class="container-xl" style="padding-bottom:0;">
+            <div class="sec-title-wrap">
+                <span class="sec-eyebrow">Our Process</span>
+                <h2 class="sec-title">How We Work</h2>
+                <p class="sec-desc">A clear, structured process from your first call to case closure.</p>
             </div>
         </div>
 
-        <div class="case-card">
-            <img src="./src/case2.webp"
-                alt="Surveillance case study">
-            <div class="case-overlay">
-                <span>Surveillance</span>
-                <h3>Insurance Fraud Ring</h3>
+        <div class="process-grid">
+            <div class="process-card">
+                <span class="process-num">01</span>
+                <span class="material-symbols-outlined">chat</span>
+                <h3>Consultation</h3>
+                <p>We discuss your situation confidentially and outline possible approaches.</p>
+            </div>
+
+            <div class="process-card">
+                <span class="process-num">02</span>
+                <span class="material-symbols-outlined">fact_check</span>
+                <h3>Case Planning</h3>
+                <p>Our team designs an investigation strategy tailored to your case.</p>
+            </div>
+
+            <div class="process-card">
+                <span class="process-num">03</span>
+                <span class="material-symbols-outlined">search</span>
+                <h3>Investigation</h3>
+                <p>Field agents and analysts gather verified evidence discreetly.</p>
+            </div>
+
+            <div class="process-card">
+                <span class="process-num">04</span>
+                <span class="material-symbols-outlined">summarize</span>
+                <h3>Detailed Report</h3>
+                <p>You receive a complete, court-ready report with findings and proof.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 5: CASE STUDIES ============ -->
+    <section class="cases-section">
+        <div class="container-xl" style="padding-bottom:0;">
+            <div class="sec-title-wrap">
+                <span class="sec-eyebrow">Our Track Record</span>
+                <h2 class="sec-title">Recent Case Studies</h2>
+                <p class="sec-desc">A look at the kinds of cases our agency has closed successfully.</p>
             </div>
         </div>
 
-        <div class="case-card">
-            <img src="./src/logimage.webp"
-                alt="Missing persons case study">
-            <div class="case-overlay">
-                <span>Missing Persons</span>
-                <h3>Family Reunited After 6 Years</h3>
+        <div class="cases-grid">
+            <div class="case-card errorpage">
+                <img src="./src/image-9.webp" alt="Corporate fraud case investigation">
+                <div class="case-overlay">
+                    <span>Corporate</span>
+                    <h3>Internal Fraud Exposed</h3>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- ============ SECTION 6: MEET OUR DETECTIVES ============ -->
-<section class="team-section">
-    <div class="container-xl" style="padding-bottom:0;">
-        <div class="sec-title-wrap">
-            <span class="sec-eyebrow">Our Experts</span>
-            <h2 class="sec-title">Meet Our Detectives</h2>
-            <p class="sec-desc">Licensed professionals with backgrounds in law enforcement, law, and digital
-                forensics.</p>
-        </div>
-    </div>
-
-    <div class="team-grid">
-        <div class="team-card">
-            <img class="team-img"
-                src="./src/person1.webp"
-                alt="Lead detective portrait">
-            <div class="team-info">
-                <h3>Arjun Menon</h3>
-                <p>Lead Investigator</p>
+            <div class="case-card errorpage">
+                <img src="./src/case2.webp" alt="Surveillance case study">
+                <div class="case-overlay">
+                    <span>Surveillance</span>
+                    <h3>Insurance Fraud Ring</h3>
+                </div>
             </div>
-        </div>
 
-        <div class="team-card">
-            <img class="team-img"
-                src="./src/person2.webp"
-                alt="Senior investigator portrait">
-            <div class="team-info">
-                <h3>Divya Krishnan</h3>
-                <p>Corporate Investigations</p>
-            </div>
-        </div>
-
-        <div class="team-card">
-            <img class="team-img"
-                src="./src/p3.webp"
-                alt="Cyber investigator portrait">
-            <div class="team-info">
-                <h3>Karthik Raja</h3>
-                <p>Cyber Forensics</p>
-            </div>
-        </div>
-
-        <div class="team-card">
-            <img class="team-img"
-                src="./src/person3.webp"
-                alt="Field agent portrait">
-            <div class="team-info">
-                <h3>Priya Suresh</h3>
-                <p>Field Surveillance</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ SECTION 7: TESTIMONIALS ============ -->
-<section class="testimonial-section">
-    <div class="container-xl" style="padding-bottom:0;">
-        <div class="sec-title-wrap">
-            <span class="sec-eyebrow">Client Stories</span>
-            <h2 class="sec-title">What Our Clients Say</h2>
-            <p class="sec-desc">Real feedback from cases we've handled with care and discretion.</p>
-        </div>
-    </div>
-
-    <div class="testimonial-grid">
-        <div class="testimonial-card">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>The team was professional and kept me informed at every step. The evidence they gathered was
-                thorough and held up in court.</p>
-            <div class="testimonial-person">
-                <img src="./src/3.webp"
-                    alt="Client photo">
-                <div>
-                    <h4>Ramesh Iyer</h4>
-                    <span class="role">Business Owner</span>
+            <div class="case-card errorpage">
+                <img src="./src/logimage.webp" alt="Missing persons case study">
+                <div class="case-overlay">
+                    <span>Missing Persons</span>
+                    <h3>Family Reunited After 6 Years</h3>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="testimonial-card">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>Extremely discreet and efficient. They helped my company uncover an internal fraud case within
-                weeks.</p>
-            <div class="testimonial-person">
-                <img src="./src/2-1.webp"
-                    alt="Client photo">
-                <div>
-                    <h4>Lakshmi Narayanan</h4>
-                    <span class="role">HR Director</span>
-                </div>
+    <!-- ============ SECTION 6: MEET OUR DETECTIVES ============ -->
+    <section class="team-section">
+        <div class="container-xl" style="padding-bottom:0;">
+            <div class="sec-title-wrap">
+                <span class="sec-eyebrow">Our Experts</span>
+                <h2 class="sec-title">Meet Our Detectives</h2>
+                <p class="sec-desc">Licensed professionals with backgrounds in law enforcement, law, and digital
+                    forensics.</p>
             </div>
         </div>
 
-        <div class="testimonial-card">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>I was skeptical at first, but the report I received was detailed, accurate, and delivered right
-                on schedule.</p>
-            <div class="testimonial-person">
-                <img src="./src/4-1.webp"
-                    alt="Client photo">
-                <div>
-                    <h4>Vikram Singh</h4>
-                    <span class="role">Private Client</span>
+        <div class="team-grid">
+            <div class="team-card">
+                <img class="team-img" src="./src/person1.webp" alt="Lead detective portrait">
+                <div class="team-info">
+                    <h3>Arjun Menon</h3>
+                    <p>Lead Investigator</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img class="team-img" src="./src/person2.webp" alt="Senior investigator portrait">
+                <div class="team-info">
+                    <h3>Divya Krishnan</h3>
+                    <p>Sr.Investigator</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img class="team-img" src="./src/p3.webp" alt="Cyber investigator portrait">
+                <div class="team-info">
+                    <h3>Karthik Raja</h3>
+                    <p>Cyber Forensics</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img class="team-img" src="./src/person3.webp" alt="Field agent portrait">
+                <div class="team-info">
+                    <h3>Priya Suresh</h3>
+                    <p>Field Surveillance</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ SECTION 8: CTA ============ -->
-<section class="cta-section">
-    <div class="cta-grid">
-        <div>
-            <h2>Have a Case That Needs Answers?</h2>
-            <p>Book a confidential consultation with our investigators today.</p>
+    <!-- ============ SECTION 7: TESTIMONIALS ============ -->
+    <section class="testimonial-section">
+        <div class="container-xl" style="padding-bottom:0;">
+            <div class="sec-title-wrap">
+                <span class="sec-eyebrow">Client Stories</span>
+                <h2 class="sec-title">What Our Clients Say</h2>
+                <p class="sec-desc">Real feedback from cases we've handled with care and discretion.</p>
+            </div>
         </div>
 
-        <div class="cta-btn-wrap">
-            <a href="contact.html" class="cta-btn">Contact Us <span
-                    class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <span class="material-symbols-outlined">format_quote</span>
+                <p>The team was professional and kept me informed at every step. The evidence they gathered was
+                    thorough and held up in court.</p>
+                <div class="testimonial-person">
+                    <img src="./src/3.webp" alt="Client photo">
+                    <div>
+                        <h4>Ramesh Iyer</h4>
+                        <span class="role">Business Owner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="material-symbols-outlined">format_quote</span>
+                <p>Extremely discreet and efficient. They helped my company uncover an internal fraud case within
+                    weeks.</p>
+                <div class="testimonial-person">
+                    <img src="./src/2-1.webp" alt="Client photo">
+                    <div>
+                        <h4>Lakshmi Narayanan</h4>
+                        <span class="role">HR Director</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="material-symbols-outlined">format_quote</span>
+                <p>I was skeptical at first, but the report I received was detailed, accurate, and delivered right
+                    on schedule.</p>
+                <div class="testimonial-person">
+                    <img src="./src/4-1.webp" alt="Client photo">
+                    <div>
+                        <h4>Vikram Singh</h4>
+                        <span class="role">Private Client</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- ============ SECTION 8: CTA ============ -->
+    <section class="cta-section">
+        <div class="cta-grid">
+            <div>
+                <h2>Have a Case That Needs Answers?</h2>
+                <p>Book a confidential consultation with our investigators today.</p>
+            </div>
+
+            <div class="cta-btn-wrap">
+                <a href="contact.html" class="cta-btn">Contact Us <span
+                        class="material-symbols-outlined">keyboard_double_arrow_right</span></a>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -1577,4 +1576,3 @@
 </body>
 
 </html>
-
